@@ -1,0 +1,370 @@
+.header {
+    background-color: #362116;
+}
+
+.main {
+    padding: 8px 0;
+    height: 78px;
+}
+
+.search {
+    margin: 12px 0;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.form {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.formControl {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.btn {
+    flex: 0;
+    display: block;
+    padding: 9px 14px 8px;
+    border: none;
+    outline: none;
+    background-color: #120b07;
+    border-radius: 8px;
+    margin-right: 1px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: #8b572a;
+}
+
+.searchIcon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    padding-bottom: 1px;
+}
+
+.sales {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.salesItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #120b07;
+    padding: 2px 16px;
+    border: 1px solid #120b07;
+}
+
+.hotline {
+    margin-left: 30px;
+}
+
+.salesItem:hover {
+    background-color: #8b572a;
+    border: 1px solid #fff;
+}
+
+.sales a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.salesIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.salesContent {
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+}
+
+.salesContent p {
+    margin: 0;
+}
+
+.salesContentheading {
+    font-weight: bold;
+}
+
+.salesContentdesc {
+    font-size: 12px;
+}
+
+.navbar {
+    color: #fff;
+    background-color: #191919;
+    height: 54px;
+}
+
+.category {
+    line-height: 54px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.categoryIcon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.categoryDesc {
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+.mainNavbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 54px;
+}
+
+.navbarItem {
+    display: inline-block;
+    padding: 0 24px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navbarItem:hover {
+    cursor: pointer;
+    background-color: #3e3e3e;
+}
+
+.navbarItem a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    height: 54px;
+}
+
+.navbarUser {
+    position: relative;
+    align-items: center;
+    display: inline-flex;
+}
+
+.navbarUser:hover {
+    cursor: default;
+    background-color: #191919;
+}
+
+.userIcon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.userAuthentication {
+    margin-left: 30px;
+    flex: none;
+}
+
+.separate {
+    border-left: 1px solid #fff;
+}
+
+.userAuthentication a {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.userLogin:hover,
+.userRegistration:hover {
+    cursor: pointer;
+    background-color: #3e3e3e;
+}
+
+.category:hover .categoryList {
+    display: block;
+}
+
+.category:hover .subCategory {
+    display: none;
+}
+
+.categoryList {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 1px);
+    width: 100%;
+    border: 1px solid #191919;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 10;
+}
+
+.mainCategory {
+    transform-origin: 50% top;
+    animation: mainCategoryGrowth ease-in 0.2s;
+    will-change: opacity, transform;
+}
+
+@keyframes mainCategoryGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.categoryItem {
+    height: 46px;
+    position: relative;
+}
+
+.categoryItem:last-child a {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.mainCategory > .mainCategoryItem:hover > a,
+.subCategory > li:hover > a {
+    background-color: #362116;
+    color: #fff;
+}
+
+.categoryItem:hover img {
+    -webkit-filter: grayscale(0) invert(1);
+    filter: grayscale(0) invert(1);
+}
+
+.categoryItem a {
+    color: #000;
+    text-decoration: none;
+    padding: 0 16px;
+    line-height: 46px;
+    display: block;
+}
+
+.categoryItem .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.categoryItem .arrow {
+    display: inline-block;
+    width: 6px;
+    height: 8px;
+    right: 16px;
+    filter: grayscale(0) invert(0.7);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.subCategory {
+    left: calc(100% + 1px);
+    display: none;
+    top: -1px;
+    min-height: 322px;
+    animation: subCategoryFlyIn ease-in 0.2s;
+    will-change: opacity, transform;
+}
+
+@keyframes subCategoryFlyIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.subCategory > .categoryItem:last-child > a {
+    border-radius: 0;
+}
+
+.subCategoryMiu {
+    top: calc(-100% - 1px);
+}
+
+.subCategoryHome {
+    top: calc(-200% - 1px)
+}
+
+.subCategoryBeauty {
+    top: calc(-300% - 1px)
+}
+
+.subCategoryMedicine {
+    top: calc(-400% - 1px)
+}
+
+.subCategoryFashion {
+    top: calc(-500% - 1px);
+}
+
+.mainCategoryItem:hover > .subCategory {
+    display: block;
+}
+
+.navbarItem .arrow {
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    filter: grayscale(0) invert(1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.navbarItem .categoryList {
+    text-transform: none;
+    text-align: left;
+}
+
+.hasSubnav.navbarItem a {
+    height: 46px;
+    padding: 0 22px;
+}
+
+.promotion .categoryList {
+    min-width: 200px;
+}
+
+.news .categoryList,
+.service .categoryList {
+    min-width: 260px;
+}
