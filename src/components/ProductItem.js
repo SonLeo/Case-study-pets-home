@@ -5,11 +5,11 @@ import styles from '~/styles/ProductItem.module.css'
 const ProductItem = ({ product }) => {
     return (
         <div className={styles['product-item']}>
-            <Link className={styles['product-link']} href={product.link} title={product.title}>
+            <Link className={styles['product-link']} href={product.link} title={product.productName}>
                 <div className={styles['product-img']}>
-                    <img src={product.image} alt={product.title} />
+                    <img src={product.image} alt={product.productName} />
                 </div>
-                <h4 className={styles['product-name']}>{product.title}</h4>
+                <h4 className={styles['product-name']}>{product.productName}</h4>
                 <div className={styles['product-price']}>
                     <span className={styles['price-old']}>{product.price_old}</span>
                     <span style={product.price_old ? { marginLeft: "10px" } : {}} className={styles['price-new']}>{product.price_new}</span>

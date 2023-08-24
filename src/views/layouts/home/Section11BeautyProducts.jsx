@@ -1,4 +1,4 @@
-import ProductSection from "./ProductSection";
+import ProductSection from "~/components/home/ProductSection";
 
 const Section11 = () => {
     return (

@@ -145,7 +145,7 @@
 
 .navbarItem {
     display: inline-block;
-    padding: 0 24px;
+    padding: 0 32px 0 18px;
     text-transform: uppercase;
     text-align: center;
 }
@@ -173,20 +173,36 @@
     background-color: #191919;
 }
 
-.userIcon {
+.user-info {
+    
+}
+
+.user-info:hover {
+    cursor: pointer;
+    background-color: #3e3e3e;
+}
+
+.userIcon,
+.logout-icon,
+.user-avatar {
     display: block;
     width: 20px;
     height: 20px;
     position: absolute;
     top: 50%;
-    left: 28px;
+    left: 20px;
     transform: translateY(-50%);
     pointer-events: none;
 }
 
+.user-username,
 .userAuthentication {
     margin-left: 30px;
     flex: none;
+}
+
+.user-username {
+    text-transform: none;
 }
 
 .separate {
@@ -365,6 +381,20 @@
 }
 
 .news .categoryList,
-.service .categoryList {
+.service .categoryList,
+.user-info .categoryList {
     min-width: 260px;
+}
+
+.user-setting {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.user-setting span {
+    margin-left: 30px;
+}
+
+.user-logout span {
+    margin-left: 46px;
+    color: #000;
 }

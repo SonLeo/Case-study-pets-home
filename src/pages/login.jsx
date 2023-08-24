@@ -1,6 +1,6 @@
-import Footer from "~/components/Footer"
-import Header from "~/components/Header"
-import Login from "~/components/Login"
+import Footer from "~/views/layouts/Footer"
+import Header from "~/views/layouts/Header"
+import Login from "~/views/layouts/Login"
 
 const LoginPage = () => {
     return (

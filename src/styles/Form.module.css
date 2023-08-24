@@ -100,3 +100,44 @@
 .form-group.invalid .form-message {
     color: #f33a58;
 }
+
+.forgot-password {
+    text-align: center;
+    margin: 20px;
+}
+
+.forgot-password a {
+    color: #333;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.forgot-password:hover a {
+    opacity: 1;
+    color: #74c05e;
+    font-weight: 600;
+}
+
+.sign-in,
+.sign-up {
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.sign-in a,
+.sign-up a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #74c05e;
+    opacity: 0.8;
+}
+
+.sign-in:hover a,
+.sign-up:hover a {
+    opacity: 1;
+}
+
+.sign-in {
+    margin-top: 28px;
+}

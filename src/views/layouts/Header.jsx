@@ -1,7 +1,11 @@
 import Link from "next/link";
-import style from "~/styles/Header.module.css"
+import style from "~/styles/Header.module.css";
+import { useUser } from "~/components/userContext";
 
 export default function Header() {
+    const { user } = useUser();
+    console.log(user)
+
     return (
         <header className={style.header}>
             <div className="container">
@@ -323,14 +327,36 @@ export default function Header() {
                                 <li className={style.navbarItem}>
                                     Liên hệ
                                 </li>
-                                <li className={`${style.navbarItem} ${style.navbarUser}`}>
-                                    <img className={style.userIcon} src="/assets/icons/User-white.svg" alt="User" />
-                                    <div className={style.userAuthentication}>
-                                        <Link className={style.userLogin} href='/login'>Đăng nhập</Link>
-                                        <span className={style.separate}></span>
-                                        <Link className={style.userRegistration} href='/sign-up'>Đăng ký</Link>
-                                    </div>
-                                </li>
+                                {
+                                    user ? (
+                                        <li className={`${style.navbarItem}  ${style.category} ${style['user-info']}`}>
+                                            <img className={style['user-avatar']} src={user.avatar || "/assets/icons/User-white.svg"} alt="User Avatar" />
+                                            <span className={style['user-username']}>{user.username}</span>
+                                            <img className={`${style.icon} ${style.arrow}`} src="/assets/icons/Arrow-down.png" alt="Arrow down" />
+                                            <ul className={`${style.categoryList} ${style.mainCategory}`}>
+                                                <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-setting']}`}>
+                                                    <Link href="thong-tin-tai-khoan" title="Thông tin tài khoản">
+                                                        <img className={style['user-avatar']} src={user.avatar || "/assets/icons/User-solid.svg"} alt="User Avatar" />
+                                                        <span className={style['']}>Thông tin tài khoản</span>
+                                                    </Link>
+                                                </li>
+                                                <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-logout']}`}>
+                                                    <img className={`${style['logout-icon']}`} src="/assets/icons/Logout-line.svg" alt="Log out" />
+                                                    <span>Đăng xuất</span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    ) : (
+                                        <li className={`${style.navbarItem} ${style.navbarUser}`}>
+                                            <img className={style.userIcon} src="/assets/icons/User-white.svg" alt="User" />
+                                            <div className={style.userAuthentication}>
+                                                <Link className={style.userLogin} href='/login'>Đăng nhập</Link>
+                                                <span className={style.separate}></span>
+                                                <Link className={style.userRegistration} href='/sign-up'>Đăng ký</Link>
+                                            </div>
+                                        </li>
+                                    )
+                                }
                             </ul>
                         </div>
                     </div>

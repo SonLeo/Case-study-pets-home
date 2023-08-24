@@ -1,15 +1,26 @@
 import axios from "axios";
 import { Formik } from "formik";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState, useEffect } from "react";
 import styles from "~/styles/Form.module.css";
-import { useUser } from "./userContext";
+import { useUser } from "~/components/userContext";
+import Link from "next/link";
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const { setUser } = useUser();
+
+    const USER_URL = "http://localhost:3001/api/users";
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem("user"));
+
+        if (user) {
+            setUser(user);
+            router.push('/');
+        }
+    }, []);
 
     const REGEX = {
         emailOrPhone: /^(?:[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+|0[1-9][0-9]{8})$/,
@@ -20,18 +31,19 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const usersResponse = await axios.get("http://localhost:3001/api/users");
+            const usersResponse = await axios.get(USER_URL);
             const matchedUser = usersResponse.data.find(user =>
                 (user.email === values.emailOrPhone || user.phone === values.emailOrPhone) &&
                 user.password === values.password
             );
 
             if (matchedUser) {
-                const token = uuidv4();
-                localStorage.setItem("userToken", token);
+                const safeUser = { ...matchedUser };
+                delete safeUser.password;
+                localStorage.setItem("user", JSON.stringify(safeUser));
 
                 alert("Đăng nhập thành công!");
-                setUser(matchedUser);
+                setUser(safeUser);
                 router.push('/');
             } else {
                 alert("Sai tài khoản hoặc mật khẩu!");
@@ -101,6 +113,10 @@ const Login = () => {
                         </div>
 
                         <button type="submit" className={styles['form-submit']}>Đăng nhập</button>
+
+                        <div className={styles['forgot-password']}><Link href='/forgot-password'>Quên mật khẩu?</Link></div>
+
+                        <div className={styles['sign-up']}>Chưa có tài khoản? <Link href='/sign-up'>Đăng ký ngay</Link></div>
                     </form>
                 </div>
             )}
