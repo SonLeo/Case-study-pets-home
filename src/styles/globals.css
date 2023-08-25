@@ -12,3 +12,14 @@ ul {
 .section {
   margin-bottom: 40px;
 }
+
+/* variables.css */
+:root {
+  --color-bg-primary: #362116;
+  --color-bg-secondary: #120b07;
+  --color-bg-hover: #8b572a;
+  --color-border-default: #191919;
+  --color-text-primary: #fff;
+  --color-text-secondary: #000;
+  --common-transition: 0.2s;
+}

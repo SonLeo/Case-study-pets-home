@@ -5,6 +5,10 @@ const userService = {
 
     setUser: user => {
         return localStorage.setItem("user", JSON.stringify(user));
+    },
+
+    logoutUser: () => {
+        return localStorage.removeItem("user");
     }
 }
 

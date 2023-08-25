@@ -12,8 +12,14 @@ export const UserProvider = ({ children }) => {
             setUser(JSON.parse(savedUser));
         }
     }, [])
+
+    const logout = () => {
+        userService.logoutUser();
+        setUser(null);
+    }
+
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, logout }}>
             {children}
         </UserContext.Provider>
     );
