@@ -3715,8 +3715,13 @@
         {
           "id": 1,
           "cartId": 1,
-          "productId": 1,
-          "quantity": 1
+          "productId": 230,
+          "quantity": 1,
+          "productName": "Nexgard Spectra trị nội ngoại ký sinh cho chó",
+          "price_old": null,
+          "price_new": "265,000₫",
+          "link": "/products/nexgard-spectra-tri-noi-ngoai-ky-sinh-cho-cho",
+          "image": "//product.hstatic.net/1000104513/product/52_1ee946fb3490402d87283258669c9655_large.png"
         }
       ]
     }

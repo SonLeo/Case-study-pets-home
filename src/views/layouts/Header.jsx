@@ -2,16 +2,48 @@ import Link from "next/link";
 import style from "~/styles/Header.module.css";
 import { useUser } from "~/components/userContext";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Header() {
     const router = useRouter();
     const { user, logout } = useUser();
+    const [cart, setCart] = useState([]);
+    const [totalItems, setTotalItems] = useState(0);
+
+    useEffect(() => {
+        if (user) {
+            axios.get(`http://localhost:3001/api/cart?userId=${user.id}`)
+                .then(response => {
+                    if (response.data && response.data.length > 0) {
+                        const userCart = response.data[0];
+                        setCart(userCart.cartItems);
+
+                        const itemsCount = userCart.cartItems.reduce((total, item) => total + item.quantity, 0);
+                        setTotalItems(itemsCount);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching cart:", error);
+                })
+        }
+    }, [user])
 
     const handleLogout = async (e) => {
         e.preventDefault();
         logout();
         router.push('/');
     };
+
+    const handleCartClick = (e) => {
+        e.preventDefault();
+
+        if (!user) {
+            router.push('/login');
+        } else {
+            router.push('/cart');
+        }
+    }
 
     return (
         <header className={style.header}>
@@ -48,15 +80,13 @@ export default function Header() {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link href='/cart'>
-                                    <div className={`${style.cart} ${style.salesItem}`}>
-                                        <div className={style.salesIcon}><img src="/assets/icons/ShoppingCart-white.svg" alt="Shopping Cart Icon" /></div>
-                                        <div className={style.salesContent}>
-                                            <p className={style.salesContentheading}><span className="cart-quantity">(0)</span> Sản phẩm</p>
-                                            <p className={style.salesContentdesc}>Giỏ hàng</p>
-                                        </div>
+                                <div className={`${style.cart} ${style.salesItem}`} onClick={handleCartClick}>
+                                    <div className={style.salesIcon}><img src="/assets/icons/ShoppingCart-white.svg" alt="Shopping Cart Icon" /></div>
+                                    <div className={style.salesContent}>
+                                    <p className={style.salesContentheading}><span className="cart-quantity">({totalItems})</span> Sản phẩm</p>
+                                        <p className={style.salesContentdesc}>Giỏ hàng</p>
                                     </div>
-                                </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

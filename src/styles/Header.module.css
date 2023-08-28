@@ -7,6 +7,10 @@
     height: 78px;
 }
 
+.cart {
+    color: #fff;
+}
+
 .search {
     margin: 12px 0;
     position: relative;
