@@ -41,7 +41,7 @@ const Section1 = () => {
     };
 
     return (
-        <section className='section'>
+        <section className={`section ${styles['section-slider']}`}>
             <div className={styles.slideContainer}>
                 {slides.map((slide, index) => (
                     <Link href={slide.path} >

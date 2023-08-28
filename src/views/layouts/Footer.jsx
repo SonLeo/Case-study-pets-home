@@ -110,7 +110,7 @@ const Footer = () => {
                             <div className={styles['footer-policy-payment']}>
                                 <div className={styles['footer-policy']}>
                                     <h3 className={styles['footer-heading']}>Chính sách</h3>
-                                    <ul class="list-menu">
+                                    <ul className="list-menu">
                                         <li><Link href="/pages/chinh-sach-doi-tra-hang-va-hoan-tien" title="Chính sách đổi/trả hàng và hoàn tiền">Chính sách đổi/trả</Link></li>
                                         <li><Link href="/pages/chinh-sach-van-chuyen-giao-nhan" title="Chính sách vận chuyển, giao nhận">Chính sách vận chuyển</Link></li>
                                         <li><Link href="/pages/bao-mat-thong-tin-khach-hang" title="Bảo mật thông tin khách hàng">Bảo mật thông tin</Link></li>
@@ -121,12 +121,12 @@ const Footer = () => {
                                 <div className={styles['footer-payment']}>
                                     <div className={styles['footer-registered-business']}>
                                         <Link href="http://online.gov.vn/Home/WebDetails/26597">
-                                            <img src="//theme.hstatic.net/1000104513/1000839384/14/fot_chung_nhan.png?v=94" class="img-responsive" alt="link" />
+                                            <img src="//theme.hstatic.net/1000104513/1000839384/14/fot_chung_nhan.png?v=94" className="img-responsive" alt="link" />
                                         </Link>
                                     </div>
                                     <div className={styles['footer-payment-method']}>
                                         <Link href="/pages/hinh-thuc-thanh-toan" title="Hình thức thanh toán">
-                                            <img src="//theme.hstatic.net/1000104513/1000839384/14/fot_chung_nhan2.png?v=94" class="img-responsive" alt="footer image" />
+                                            <img src="//theme.hstatic.net/1000104513/1000839384/14/fot_chung_nhan2.png?v=94" className="img-responsive" alt="footer image" />
                                         </Link>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div class={styles['back-to-top']} onClick={handleBackToTop}>
+            <div className={styles['back-to-top']} onClick={handleBackToTop}>
                 <div className={styles['back-to-top-icon']}>
                     <img src="/assets/icons/Up-white.svg" />
                 </div>

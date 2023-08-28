@@ -1,9 +1,17 @@
 import Link from "next/link";
 import style from "~/styles/Header.module.css";
 import { useUser } from "~/components/userContext";
+import { useRouter } from "next/router";
 
 export default function Header() {
+    const router = useRouter();
     const { user, logout } = useUser();
+
+    const handleLogout = async (e) => {
+        e.preventDefault();
+        logout();
+        router.push('/');
+    };
 
     return (
         <header className={style.header}>
@@ -334,16 +342,16 @@ export default function Header() {
                                             <img className={`${style.icon} ${style.arrow}`} src="/assets/icons/Arrow-down.png" alt="Arrow down" />
                                             <ul className={`${style.categoryList} ${style.mainCategory}`}>
                                                 <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-setting']}`}>
-                                                    <Link href={`/user/${user.id}/Thong-tin-tai-khoan`} title="Thông tin tài khoản">
+                                                    <Link href={`/account-information`} title="Thông tin tài khoản">
                                                         <img className={style['user-avatar']} src={user.avatar || "/assets/icons/User-solid.svg"} alt="User Avatar" />
                                                         <span className={style['']}>Thông tin tài khoản</span>
                                                     </Link>
                                                 </li>
                                                 <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-logout']}`}>
-                                                    <button onClick={logout}>
+                                                    <Link href="/" onClick={handleLogout}>
                                                         <img className={`${style['logout-icon']}`} src="/assets/icons/Logout-line.svg" alt="Log out" />
                                                         <span>Đăng xuất</span>
-                                                    </button>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </li>

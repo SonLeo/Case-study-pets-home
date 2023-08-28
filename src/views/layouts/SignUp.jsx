@@ -14,11 +14,12 @@ const SignUp = () => {
     const USER_URL = "http://localhost:3001/api/users";
 
     const REGEX = {
+        phone: /^(?:\+84|0)[1-9][0-9]{7,8}$/,
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        phone: /^(?:\+84|0)[1-9][0-9]{7,8}$/
+        password: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/
     };
 
-    const handleSubmit = async (values, { setSubmitting }) => {
+    const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         if (loading) return;
         setLoading(true);
 
@@ -28,14 +29,14 @@ const SignUp = () => {
             const matchedUserByEmail = values.email && usersResponse.data.find(user => user.email === values.email);
 
             if (matchedUserByPhone) {
-                alert("Số điện thoại đã được sử dụng!");
+                setFieldError("phone", "Số điện thoại đã được sử dụng!");
                 setLoading(false);
                 setSubmitting(false);
                 return;
             }
 
             if (matchedUserByEmail) {
-                alert("Email đã được sử dụng!");
+                setFieldError("email", "Email đã được sử dụng!");
                 setLoading(false);
                 setSubmitting(false);
                 return;
@@ -50,7 +51,6 @@ const SignUp = () => {
             setUser(safeUser)
             localStorage.setItem("user", JSON.stringify(safeUser))
 
-            alert("Đăng ký thành công");
             router.push('/');
 
         } catch (error) {
@@ -70,7 +70,10 @@ const SignUp = () => {
                 password: "",
                 confirmPassword: "",
                 role: "Customer",
-                address: ""
+                address: "",
+                registrationDate: new Date().toISOString(),
+                membershipLevel: "Pet's Rookie",
+                accumulatedPoints: 0
             }}
 
             onSubmit={handleSubmit}
@@ -78,25 +81,27 @@ const SignUp = () => {
                 const errors = {}
 
                 if (!values.username) {
-                    errors.username = "Mục này không được để trống!";
+                    errors.username = "Họ tên không được để trống!";
                 }
 
                 if (!values.phone) {
-                    errors.phone = "Mục này không được để trống!";
+                    errors.phone = "Số điện thoại không được để trống!";
                 } else if (!REGEX.phone.test(values.phone)) {
-                    errors.phone = "Số điện thoại không hợp lệ";
+                    errors.phone = "Số điện thoại không hợp lệ!";
                 }
 
                 if (values.email && !REGEX.email.test(values.email)) {
-                    errors.email = "Email không hợp lệ"
+                    errors.email = "Email không hợp lệ!"
                 }
 
                 if (!values.password) {
-                    errors.password = "Mục này không được để trống!";
+                    errors.password = "Mật khẩu không được để trống!";
+                } else if (!REGEX.password.test(values.password)) {
+                    errors.password = "Mật khẩu cần ít nhất 6 ký tự, chứa ít nhất 1 số và 1 ký tự đặc biệt";
                 }
 
                 if (!values.confirmPassword) {
-                    errors.confirmPassword = "Mục này không được để trống";
+                    errors.confirmPassword = "Mật khẩu không được để trống";
                 } else if (values.password !== values.confirmPassword) {
                     errors.confirmPassword = "Mật khẩu nhập lại không khớp";
                 }
@@ -160,7 +165,7 @@ const SignUp = () => {
                         {/* Password */}
                         <div className={`${styles['form-group']} ${errors.password && touched.password ? styles.invalid : ""}`}>
                             <label className={styles['form-label']} htmlFor="password">
-                                Password: <span className={styles.required}>*</span>
+                                Mật khẩu: <span className={styles.required}>*</span>
                             </label>
                             <input 
                                 type="password"

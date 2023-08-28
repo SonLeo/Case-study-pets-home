@@ -26,7 +26,7 @@ const Login = () => {
         emailOrPhone: /^(?:[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+|0[1-9][0-9]{8})$/,
     };
 
-    const handleSubmit = async (values, { setSubmitting }) => {
+    const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         if (loading) return;
         setLoading(true);
 
@@ -42,11 +42,11 @@ const Login = () => {
                 delete safeUser.password;
                 localStorage.setItem("user", JSON.stringify(safeUser));
 
-                alert("Đăng nhập thành công!");
                 setUser(safeUser);
                 router.push('/');
             } else {
-                alert("Sai tài khoản hoặc mật khẩu!");
+                setFieldError("emailOrPhone", "Sai tài khoản hoặc mật khẩu!");
+                setFieldError("password", "Sai tài khoản hoặc mật khẩu!");
             }
         } catch (error) {
             alert("Có lỗi trong quá trình đăng nhập. Hãy thử lại!")
@@ -98,7 +98,7 @@ const Login = () => {
                         </div>
 
                         <div className={`${styles['form-group']} ${errors.password && touched.password ? styles.invalid : ""}`}>
-                            <label className={styles['form-label']} htmlFor="password">Password: <span className={styles.required}>*</span></label>
+                            <label className={styles['form-label']} htmlFor="password">Mật khẩu: <span className={styles.required}>*</span></label>
                             <input
                                 type="password"
                                 name="password"

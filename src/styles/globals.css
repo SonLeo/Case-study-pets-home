@@ -10,7 +10,11 @@ ul {
 }
 
 .section {
-  margin-bottom: 40px;
+  margin: 40px 0;
+}
+
+.section ~ .section {
+  margin: 0 0 40px;
 }
 
 /* variables.css */
