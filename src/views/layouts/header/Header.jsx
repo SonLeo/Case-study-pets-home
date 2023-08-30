@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "~/styles/Header.module.css";
+import style from "./Header.module.css";
 import { useUser } from "~/components/userContext";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

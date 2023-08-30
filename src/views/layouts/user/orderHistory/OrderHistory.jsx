@@ -1,7 +1,8 @@
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "~/styles/OrderHistory.module.css"
+import styles from "./OrderHistory.module.css"
+import { formatCurrency } from "~/utils/commonUtils";
 
 const ORDERS_URL = "http://localhost:3001/api/orders"
 
@@ -36,7 +37,7 @@ const OrderHistory = ({ userId }) => {
                             <li key={order.id}>
                                 <div className={styles['order-info']}>
                                     <p className={styles['order-date']}>Đơn hàng ngày: {new Date(order.date).toLocaleDateString()}</p>
-                                    <p className={styles['order-amount']}>Tổng tiền: {order.totalAmount}</p>
+                                    <p className={styles['order-amount']}>Tổng tiền: {formatCurrency(order.totalAmount)}</p>
                                 </div>
                                 <table className={styles['order-products']}>
                                     <tbody>
@@ -45,7 +46,7 @@ const OrderHistory = ({ userId }) => {
                                                 <td className={styles['product-img']}><img src={item.image} alt={item.productName} width="160" /></td>
                                                 <td className={styles['product-name']}><Link href={item.link}>{item.productName}</Link></td>
                                                 <td className={styles['product-quantity']}>Số lượng: {item.quantity}</td>
-                                                <td className={styles['product-price']}>Giá: {item.price}</td>
+                                                <td className={styles['product-price']}>Giá: {formatCurrency(item.price)}</td>
                                             </tr>
                                         ))}
                                     </tbody>

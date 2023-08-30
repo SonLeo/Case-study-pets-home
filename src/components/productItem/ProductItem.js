@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import styles from '~/styles/ProductItem.module.css'
+import styles from './ProductItem.module.css'
+import { formatCurrency } from '~/utils/commonUtils';
 
 const ProductItem = ({ product }) => {
     return (
@@ -11,8 +12,8 @@ const ProductItem = ({ product }) => {
                 </div>
                 <h4 className={styles['product-name']}>{product.productName}</h4>
                 <div className={styles['product-price']}>
-                    <span className={styles['price-old']}>{product.price_old}</span>
-                    <span style={product.price_old ? { marginLeft: "10px" } : {}} className={styles['price-new']}>{product.price_new}</span>
+                    <span className={styles['price-old']}>{product.price_old && formatCurrency(product.price_old)}</span>
+                    <span style={product.price_old ? { marginLeft: "10px" } : {}} className={styles['price-new']}>{product.price_new && formatCurrency(product.price_new)}</span>
                 </div>
                 <div className={styles['product-action']}>
                     <span className={styles['product-liked']}>

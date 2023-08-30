@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "~/styles/Section12.module.css"
+import styles from "./Section12.module.css"
 
 const Section12 = () => {
     const [posts, setPosts] = useState([]);

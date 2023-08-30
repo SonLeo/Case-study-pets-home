@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '~/styles/Section2.module.css';
+import styles from './Section2.module.css';
 
 const Section2 = () => {
     const banners = [

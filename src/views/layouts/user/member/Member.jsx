@@ -1,4 +1,4 @@
-import styles from "~/styles/Member.module.css";
+import styles from "./Member.module.css";
 
 const Member = ({ user, formatDate }) => {
     return (

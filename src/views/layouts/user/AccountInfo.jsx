@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useUser } from "~/components/userContext";
-import Member from "~/views/layouts/user/Member";
-import EditInfo from "~/views/layouts/user/EditInfo";
-import OrderHistory from "~/views/layouts/user/OrderHistory";
+import Member from "~/views/layouts/user/member/Member";
+import EditInfo from "~/views/layouts/user/editInfo/EditInfo";
+import OrderHistory from "~/views/layouts/user/orderHistory/OrderHistory";
 
 const AccountInfo = () => {
     const router = useRouter();
@@ -59,7 +59,7 @@ const AccountInfo = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 col-xl-12">
-                            <OrderHistory userId={user.id} />
+                            {user && <OrderHistory userId={user.id} />}
                         </div>
                     </div>
                 </div>

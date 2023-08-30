@@ -1,6 +1,6 @@
-import Footer from "~/views/layouts/Footer";
-import Header from "~/views/layouts/Header";
-import Cart from "~/views/layouts/user/Cart";
+import Footer from "~/views/layouts/footer/Footer";
+import Header from "~/views/layouts/header/Header";
+import Cart from "~/views/layouts/user/cart/Cart";
 
 const CartPage = () => {
     return (

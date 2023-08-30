@@ -1,8 +1,8 @@
 import axios from 'axios';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import ProductItem from '~/components/ProductItem';
-import styles from '~/styles/Section3.module.css';
+import ProductItem from '~/components/productItem/ProductItem';
+import styles from './Section3.module.css';
 
 const Section3 = () => {
     const [products, setProducts] = useState([]);

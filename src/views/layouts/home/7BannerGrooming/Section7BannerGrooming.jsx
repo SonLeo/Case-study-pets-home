@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "~/styles/SectionImg.module.css"
+import styles from "~/styles/ImageSection.module.css"
 
 const Section7 = () => {
     return (

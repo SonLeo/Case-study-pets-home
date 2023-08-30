@@ -2,7 +2,7 @@ import axios from 'axios';
 import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 import styles from "~/styles/ProductSection.module.css";
-import ProductItem from "~/components/ProductItem";
+import ProductItem from "~/components/productItem/ProductItem";
 
 const ProductSection = ({ title, mainLink, subLinks, apiUrl, categoryFilter }) => {
     const [products, setProducts] = useState([]);

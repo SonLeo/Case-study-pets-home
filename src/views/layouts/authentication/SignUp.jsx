@@ -1,23 +1,19 @@
 import axios from "axios";
-import { Formik } from "formik";
 import Link from "next/link";
+import { Formik } from "formik";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import { useState, useContext } from "react";
-import styles from "~/styles/Form.module.css";
+import styles from "./Form.module.css";
+import { REGEX } from "~/utils/commonUtils";
 import { useUser } from "~/components/userContext"
+import { useToast } from "~/components/toastContext";
 
 const SignUp = () => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
-    const { user, setUser } = useUser();
-
+    const { setUser } = useUser();
+    const { showSuccessToast, showErrorToast } = useToast();
     const USER_URL = "http://localhost:3001/api/users";
-
-    const REGEX = {
-        phone: /^(?:\+84|0)[1-9][0-9]{7,8}$/,
-        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        password: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/
-    };
 
     const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         if (loading) return;
@@ -43,18 +39,17 @@ const SignUp = () => {
             }
 
             const { confirmPassword, ...userToSave } = values;
+            const response = await axios.post(USER_URL, userToSave);
+            const createdUser = response.data;
 
-            await axios.post(USER_URL, userToSave);
-
-            const safeUser = { ...userToSave };
+            const safeUser = { ...createdUser };
             delete safeUser.password;
             setUser(safeUser)
             localStorage.setItem("user", JSON.stringify(safeUser))
-
+            showSuccessToast('Đăng ký tài khoản thành công!');
             router.push('/');
-
         } catch (error) {
-            alert("Có lỗi trong quá trình đăng ký. Hãy thử lại!");
+            showErrorToast("Có lỗi trong quá trình đăng ký. Hãy thử lại!");
             console.error("Signup error:", error);
             setLoading(false);
             setSubmitting(false);
@@ -73,6 +68,7 @@ const SignUp = () => {
                 address: "",
                 registrationDate: new Date().toISOString(),
                 membershipLevel: "Pet's Rookie",
+                gender: 0,
                 accumulatedPoints: 0
             }}
 

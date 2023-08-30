@@ -1,16 +1,18 @@
 import axios from "axios";
+import Link from "next/link";
 import { Formik } from "formik";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import styles from "~/styles/Form.module.css";
+import styles from "./Form.module.css";
+import { REGEX } from "~/utils/commonUtils";
 import { useUser } from "~/components/userContext";
-import Link from "next/link";
+import { useToast } from "~/components/toastContext";
 
 const Login = () => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const { setUser } = useUser();
-
+    const { showSuccessToast, showErrorToast } = useToast();
     const USER_URL = "http://localhost:3001/api/users";
 
     useEffect(() => {
@@ -21,10 +23,6 @@ const Login = () => {
             router.push('/');
         }
     }, []);
-
-    const REGEX = {
-        emailOrPhone: /^(?:[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+|0[1-9][0-9]{8})$/,
-    };
 
     const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         if (loading) return;
@@ -43,13 +41,14 @@ const Login = () => {
                 localStorage.setItem("user", JSON.stringify(safeUser));
 
                 setUser(safeUser);
+                showSuccessToast('Đăng nhập thành công!');
                 router.push('/');
             } else {
                 setFieldError("emailOrPhone", "Sai tài khoản hoặc mật khẩu!");
                 setFieldError("password", "Sai tài khoản hoặc mật khẩu!");
             }
         } catch (error) {
-            alert("Có lỗi trong quá trình đăng nhập. Hãy thử lại!")
+            showErrorToast("Có lỗi trong quá trình đăng nhập. Hãy thử lại!")
             console.error("Login error:", error);
         }
         setLoading(false);

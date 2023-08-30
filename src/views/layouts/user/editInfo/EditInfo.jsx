@@ -1,14 +1,14 @@
 import axios from "axios";
 import { Formik } from "formik";
 import { useState } from "react";
-import styles from "~/styles/EditInfo.module.css";
+import styles from "./EditInfo.module.css";
+import { REGEX } from "~/utils/commonUtils";
+import { useToast } from "~/components/toastContext";
 
 const EditInfo = ({ user, onUpdated }) => {
     const USERS_URL = "http://localhost:3001/api/users";
-    const REGEX = {
-        phone: /^(?:\+84|0)[1-9][0-9]{7,8}$/,
-        email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-    };
+
+    const { showSuccessToast, showErrorToast } = useToast();
 
     const [isEditable, setIsEditable] = useState({
         username: false,
@@ -52,9 +52,9 @@ const EditInfo = ({ user, onUpdated }) => {
                 address: false,
                 gender: false
             });
-            alert("Cập nhật thành công!");
+            showSuccessToast('Thông tin đã được cập nhật!');
         } catch (error) {
-            alert("Có lỗi xảy ra. Hãy thử lại!");
+            showErrorToast('Có lỗi xảy ra. Hãy thử lại!');
             console.error("Edit error:", error);
         } finally {
             setSubmitting(false);
@@ -107,10 +107,22 @@ const EditInfo = ({ user, onUpdated }) => {
                             {
                                 isEditable.gender ?
                                     (
-                                        <select name="gender" onChange={handleChange} className={styles['form-control']} value={values.gender}>
-                                            <option value={"0"}>Nam</option>
-                                            <option value={"1"}>Nữ</option>
-                                            <option value={"2"}>Khác</option>
+                                        <select
+                                            name="gender"
+                                            onChange={(e) => {
+                                                const selectedValue = parseInt(e.target.value, 10);
+                                                handleChange({
+                                                    target: {
+                                                        name: e.target.name,
+                                                        value: selectedValue
+                                                    }
+                                                });
+                                            }}
+                                            className={styles['form-control']}
+                                            value={values.gender}
+                                        >
+                                            <option value={0}>Nam</option>
+                                            <option value={1}>Nữ</option>
                                         </select>
                                     ) :
                                     (
@@ -119,8 +131,7 @@ const EditInfo = ({ user, onUpdated }) => {
                                             name="genderDisplay"
                                             className={styles['form-control']}
                                             value={
-                                                values.gender === "0" ? "Nam" :
-                                                    values.gender === "1" ? "Nữ" : "Khác"
+                                                values.gender === 1 ? "Nư" : "Nam"
                                             }
                                             disabled={true}
                                         />

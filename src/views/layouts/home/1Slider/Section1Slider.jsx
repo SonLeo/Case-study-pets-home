@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import styles from '~/styles/Section1.module.css';
+import styles from './Section1.module.css';
 
 const slides = [
     {
@@ -44,9 +44,8 @@ const Section1 = () => {
         <section className={`section ${styles['section-slider']}`}>
             <div className={styles.slideContainer}>
                 {slides.map((slide, index) => (
-                    <Link href={slide.path} >
+                    <Link key={index} href={slide.path} >
                         <img
-                            key={index}
                             src={slide.imgSrc}
                             alt={`Slide ${index}`}
                             className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}

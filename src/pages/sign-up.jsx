@@ -1,6 +1,6 @@
-import Footer from "~/views/layouts/Footer"
-import Header from "~/views/layouts/Header"
-import SignUp from "~/views/layouts/SignUp"
+import Footer from "~/views/layouts/footer/Footer"
+import Header from "~/views/layouts/header/Header"
+import SignUp from "~/views/layouts/authentication/SignUp"
 
 const SignUpPage = () => {
     return (
