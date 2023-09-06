@@ -7,7 +7,6 @@ import { useToast } from "~/components/toastContext";
 
 const EditInfo = ({ user, onUpdated }) => {
     const USERS_URL = "http://localhost:3001/api/users";
-
     const { showSuccessToast, showErrorToast } = useToast();
 
     const [isEditable, setIsEditable] = useState({

@@ -9,7 +9,7 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from "next/router";
 import { useToast } from "~/components/toastContext";
 
-const CART_URL = "http://localhost:3001/api/cart";
+const CART_URL = "http://localhost:3001/api/carts";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([])

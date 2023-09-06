@@ -1,15 +1,15 @@
+import Checkout from "~/views/layouts/checkout/Checkout";
 import Footer from "~/views/layouts/footer/Footer";
 import Header from "~/views/layouts/header/Header";
-import Cart from "~/views/layouts/cart/Cart";
 
-const CartPage = () => {
+const CheckoutPage = () => {
     return (
         <>
             <Header />
-            <Cart />
+            <Checkout />
             <Footer />
         </>
     )
 }
 
-export default CartPage;
+export default CheckoutPage;

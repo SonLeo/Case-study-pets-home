@@ -3703,37 +3703,16 @@
       "membershipLevel": "Pet's Rookie",
       "accumulatedPoints": 0,
       "id": 2,
-      "password": "@123123",
-      "gender": 0
-    },
-    {
-      "username": "Nguyễn Văn A",
-      "email": "",
-      "phone": "0987123456",
-      "password": "@123123",
-      "role": "Customer",
-      "address": "",
-      "registrationDate": "2023-08-29T05:22:04.250Z",
-      "membershipLevel": "Pet's Rookie",
       "gender": 0,
-      "accumulatedPoints": 0,
-      "id": 3
-    },
-    {
-      "username": "Nguyễn Văn A",
-      "email": "",
-      "phone": "0987456456",
-      "password": "@123123",
-      "role": "Customer",
-      "address": "",
-      "registrationDate": "2023-08-29T14:01:19.981Z",
-      "membershipLevel": "Pet's Rookie",
-      "gender": 0,
-      "accumulatedPoints": 0,
-      "id": 4
+      "shippingDetails": {
+        "receiver": "Trịnh Sơn",
+        "phone": "0987123123",
+        "address": "Thanh Xuân - Hà Nội",
+        "note": ""
+      }
     }
   ],
-  "cart": [
+  "carts": [
     {
       "cartItems": [
         {
@@ -3750,7 +3729,7 @@
           "isChecked": false
         },
         {
-          "id": 2,
+          "id": 3,
           "cartId": 1,
           "productId": 230,
           "quantity": 1,
@@ -3763,7 +3742,8 @@
           "isChecked": false
         }
       ],
-      "id": 1
+      "id": 1,
+      "userId": 2
     }
   ],
   "orders": [
@@ -3772,6 +3752,37 @@
       "userId": 2,
       "date": "2023-08-26T16:18:09.937Z",
       "totalAmount": 265000,
+      "status": "completed",
+      "note": "Giao hàng sau 5 giờ chiều",
+      "shipping": {
+        "address": "Thanh Xuân - Hà Nội",
+        "estimatedDelivery": "2023-09-02T16:18:09.937Z",
+        "recipientName": "Nguyễn Thị B",
+        "recipientPhone": "0987123465"
+      },
+      "history": [
+        {
+          "date": "2023-08-26T16:18:09.937Z",
+          "action": "Order created"
+        },
+        {
+          "date": "2023-08-27T10:00:00.000Z",
+          "action": "Order processed"
+        },
+        {
+          "date": "2023-08-28T14:30:00.000Z",
+          "action": "Order delivered"
+        },
+        {
+          "date": "2023-08-28T15:00:00.000Z",
+          "action": "Order completed"
+        }
+      ],
+      "payment": {
+        "method": "cash",
+        "status": "paid",
+        "transactionId": null
+      },
       "orderItems": [
         {
           "id": 1,

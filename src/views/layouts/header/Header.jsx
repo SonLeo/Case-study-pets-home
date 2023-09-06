@@ -13,7 +13,7 @@ export default function Header() {
 
     useEffect(() => {
         if (user) {
-            axios.get(`http://localhost:3001/api/cart?userId=${user.id}`)
+            axios.get(`http://localhost:3001/api/carts?userId=${user.id}`)
                 .then(response => {
                     if (response.data && response.data.length > 0) {
                         const userCart = response.data[0];
