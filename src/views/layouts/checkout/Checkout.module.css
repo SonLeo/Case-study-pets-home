@@ -69,25 +69,32 @@
     margin-bottom: 20px;
 }
 
-.total {
+.discount-section {
     padding-bottom: 20px;
 }
 
+.final-total {
+    padding: 0 30px 20px;
+}
+
 .total,
-.summary-item {
+.summary-item,
+.final-total,
+.discount-section {
     display: flex;
     justify-content: space-between;
 }
 
-.total span,
-.summary-item span {
+.summary-item span,
+.final-total span,
+.discount-section span {
     line-height: 28px;
     font-weight: 500;
 }
 
-.total-value,
 .summary-value,
-.summary-value {
+.discount-value,
+.final-total-value {
     color: #74c05e;
 }
 
@@ -98,6 +105,7 @@
 .back-to-cart a {
     color: #2b78a0;
     text-decoration: none;
+    line-height: 40px;
 }
 
 .back-to-cart a:hover {

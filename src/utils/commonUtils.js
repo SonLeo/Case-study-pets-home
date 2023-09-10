@@ -8,3 +8,9 @@ export const REGEX = {
 export const formatCurrency = (amount) => {
     return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
+
+export const API_URLS = {
+    USERS: "http://localhost:3001/api/users",
+    CARTS: "http://localhost:3001/api/carts",
+    ORDERS: "http://localhost:3001/api/orders"
+}

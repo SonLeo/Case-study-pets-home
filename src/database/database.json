@@ -3704,30 +3704,41 @@
       "accumulatedPoints": 0,
       "id": 2,
       "gender": 0,
-      "shippingDetails": {
-        "receiver": "Trịnh Sơn",
-        "phone": "0987123123",
-        "address": "Thanh Xuân - Hà Nội",
-        "note": ""
-      }
+      "vouchers": [
+        {
+          "title": "WELCOME10",
+          "detail": "Giảm 10% đơn hàng đầu tiên có giá trị từ 300.000 ₫",
+          "discountType": "percent",
+          "value": 10,
+          "minOrderValue": 300000,
+          "startDate": "2023-01-01T00:00:00.000Z",
+          "endDate": "2023-12-31T23:59:59.999Z"
+        },
+        {
+          "title": "HELLOSUMMER20",
+          "detail": "Giảm 20% cho dịch vụ SPA - GROOMING từ ngày 01/04/2023 - 07/04/2023",
+          "discountType": "percent",
+          "value": 20,
+          "minOrderValue": 0,
+          "startDate": "2023-04-01T00:00:00.000Z",
+          "endDate": "2023-04-07T23:59:59.999Z"
+        },
+        {
+          "title": "HELLOFALL15",
+          "detail": "Giảm 15% cho các sản phẩm quần áo từ ngày 01/09/2023 - 07/09/2023",
+          "discountType": "percent",
+          "value": 15,
+          "minOrderValue": 0,
+          "startDate": "2023-09-01T00:00:00.000Z",
+          "endDate": "2023-09-07T23:59:59.999Z"
+        }
+      ],
+      "shippingDetails": []
     }
   ],
   "carts": [
     {
       "cartItems": [
-        {
-          "id": 1,
-          "cartId": 1,
-          "productId": 230,
-          "quantity": 1,
-          "productName": "Nexgard Spectra trị nội ngoại ký sinh cho chó",
-          "price_old": null,
-          "price_new": 265000,
-          "link": "/products/nexgard-spectra-tri-noi-ngoai-ky-sinh-cho-cho",
-          "image": "//product.hstatic.net/1000104513/product/52_1ee946fb3490402d87283258669c9655_large.png",
-          "stockQuantity": 100,
-          "isChecked": false
-        },
         {
           "id": 3,
           "cartId": 1,
@@ -3742,8 +3753,7 @@
           "isChecked": false
         }
       ],
-      "id": 1,
-      "userId": 2
+      "id": 1
     }
   ],
   "orders": [

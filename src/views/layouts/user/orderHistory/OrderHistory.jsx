@@ -2,9 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./OrderHistory.module.css"
-import { formatCurrency } from "~/utils/commonUtils";
-
-const ORDERS_URL = "http://localhost:3001/api/orders"
+import { API_URLS, formatCurrency } from "~/utils/commonUtils";
 
 const OrderHistory = ({ userId }) => {
     const [orders, setOrders] = useState([]);
@@ -12,7 +10,7 @@ const OrderHistory = ({ userId }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`${ORDERS_URL}?userId=${userId}`)
+        axios.get(`${API_URLS.ORDERS}?userId=${userId}`)
             .then(response => {
                 setOrders(response.data);
                 setLoading(false);

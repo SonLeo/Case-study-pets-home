@@ -2,11 +2,10 @@ import axios from "axios";
 import { Formik } from "formik";
 import { useState } from "react";
 import styles from "./EditInfo.module.css";
-import { REGEX } from "~/utils/commonUtils";
+import { API_URLS, REGEX } from "~/utils/commonUtils";
 import { useToast } from "~/components/toastContext";
 
 const EditInfo = ({ user, onUpdated }) => {
-    const USERS_URL = "http://localhost:3001/api/users";
     const { showSuccessToast, showErrorToast } = useToast();
 
     const [isEditable, setIsEditable] = useState({
@@ -30,7 +29,7 @@ const EditInfo = ({ user, onUpdated }) => {
 
     const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         try {
-            const usersResponse = await axios.get(USERS_URL);
+            const usersResponse = await axios.get(API_URLS.USERS);
             const matchedUserByEmail = values.email !== user.email &&
                 usersResponse.data.find(user => user.email === values.email);
 
@@ -40,7 +39,7 @@ const EditInfo = ({ user, onUpdated }) => {
                 return;
             }
 
-            const updatedUser = await axios.patch(`${USERS_URL}/${user.id}`, values);
+            const updatedUser = await axios.patch(`${API_URLS.USERS}/${user.id}`, values);
             localStorage.setItem("user", JSON.stringify(values));
             if (onUpdated) {
                 onUpdated(updatedUser.data)

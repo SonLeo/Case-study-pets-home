@@ -3,13 +3,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useUser } from "~/components/userContext";
 import styles from "./Cart.module.css"
-import { formatCurrency } from '~/utils/commonUtils';
+import { API_URLS, formatCurrency } from '~/utils/commonUtils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from "next/router";
 import { useToast } from "~/components/toastContext";
-
-const CART_URL = "http://localhost:3001/api/carts";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([])
@@ -24,7 +22,7 @@ const Cart = () => {
 
     useEffect(() => {
         if (user && user.id) {
-            axios.get(`${CART_URL}?userId=${user.id}`)
+            axios.get(`${API_URLS.CARTS}?userId=${user.id}`)
                 .then(response => {
                     if (response.data && response.data.length > 0) {
                         const updatedCartItems = response.data[0].cartItems.map(item => ({ ...item, isChecked: false }));
@@ -64,7 +62,7 @@ const Cart = () => {
         const cartId = cartItems[0].cartId;
 
         try {
-            const response = await axios.put(`${CART_URL}/${cartId}`, {
+            const response = await axios.put(`${API_URLS.CARTS}/${cartId}`, {
                 cartItems: updatedCartItems
             });
 
@@ -139,7 +137,7 @@ const Cart = () => {
         const cartId = cartItems[0].cartId;
         
         try {
-            const response = await axios.put(`${CART_URL}/${cartId}`, {
+            const response = await axios.put(`${API_URLS.CARTS}/${cartId}`, {
                 cartItems: updatedCartItems
             });
 

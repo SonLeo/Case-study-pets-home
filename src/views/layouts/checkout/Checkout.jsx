@@ -2,21 +2,21 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./Checkout.module.css";
 import { useUser } from "~/components/userContext";
-import { formatCurrency } from '~/utils/commonUtils';
+import { API_URLS, formatCurrency } from '~/utils/commonUtils';
 import ShipmentDetails from "./shipmentDetails/ShipmentDetails";
 import Discount from "./discount/discount";
 import PaymentMethods from "./payment/PaymentMethods";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEquals, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-
-const CART_URL = "http://localhost:3001/api/carts";
-const USERS_URL = "http://localhost:3001/api/users";
+import { useToast } from "~/components/toastContext";
 
 const Checkout = () => {
     const { user } = useUser();
     const [cartItems, setCartItems] = useState([]);
     const shippingCost = 30000;
+    const [discount, setDiscount] = useState(0);
+    const { showSuccessToast, showErrorToast } = useToast();
 
     const [shippingInfo, setShippingInfo] = useState({
         receiver: user ? user.username : "",
@@ -31,7 +31,7 @@ const Checkout = () => {
 
     useEffect(() => {
         if (user && user.id) {
-            axios.get(`${CART_URL}?userId=${user.id}`)
+            axios.get(`${API_URLS.CARTS}?userId=${user.id}`)
                 .then(response => {
                     if (response.data && response.data.length > 0) {
                         setCartItems(response.data[0].cartItems);
@@ -45,18 +45,18 @@ const Checkout = () => {
 
     const handleCheckout = async () => {
         try {
-            const response = await axios.put(`${USERS_URL}/${user.id}`, {
+            const response = await axios.put(`${API_URLS.USERS}/${user.id}`, {
                 ...user,
                 shippingDetails: shippingInfo
             });
 
             if (response.status === 200) {
-                console.log("Shipping details updated successfully.");
+                showSuccessToast("Cập nhật thành công!");
             } else {
-                console.error("Failed to update shipping details.");
+                showErrorToast("Cập nhật thất bại!");
             }
         } catch (error) {
-            console.error("Error updating shipping details:", error);
+            showErrorToast("Có lỗi xảy ra, vui lòng thử lại!");
         }
     }
 
@@ -64,8 +64,20 @@ const Checkout = () => {
         return cartItems.reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
     }
 
-    const calculateTotalAmount = () => {
-        return calculateTotalProductPrice() + shippingCost;
+    const onVoucherApplied = (voucher) => {
+        let newDiscount = 0;
+        if (voucher.discountType === 'percent') {
+            newDiscount = (calculateTotalProductPrice() * voucher.value) / 100;
+        } else if (voucher.discountType === 'amount') {
+            newDiscount = voucher.value;
+        }
+
+        console.log("New discount value:", newDiscount);
+        setDiscount(newDiscount);
+    }
+
+    const calculateTotalAmountAfterDiscount = () => {
+        return calculateTotalProductPrice() + shippingCost - discount;
     }
 
     return (
@@ -106,11 +118,15 @@ const Checkout = () => {
                                     <span className={styles['summary-label']}>Phí vận chuyển:</span>
                                     <span className={styles['summary-value']}>{formatCurrency(30000)}</span>
                                 </div>
+                                <div className={styles['discount-section']}>
+                                    <span className={styles['discount-label']}>Giảm giá:</span>
+                                    <span className={styles['discount-value']}>{formatCurrency(discount)}</span>
+                                </div>
                             </div>
-                            <div className={styles['total']}>
-                                <span className={styles['total-label']}>Tổng cộng:</span>
-                                <span className={styles['total-value']}>{formatCurrency(calculateTotalAmount())}</span>
-                            </div>
+                        </div>
+                        <div className={styles['final-total']}>
+                            <span className={styles['final-total-label']}>Tổng thanh toán:</span>
+                            <span className={styles['final-total-value']}>{formatCurrency(calculateTotalAmountAfterDiscount())}</span>
                         </div>
                         <div className={styles['actions']}>
                             <div className="row">
@@ -126,8 +142,13 @@ const Checkout = () => {
                         </div>
                     </div>
                     <div className="col-lg-6 col-xl-6">
-                        <ShipmentDetails user={user} onShippingInfoChange={handleShippingInfoChange} />
-                        <Discount />
+                        <ShipmentDetails
+                            onShippingInfoChange={handleShippingInfoChange}
+                        />
+                        <Discount
+                            onVoucherApplied={onVoucherApplied}
+                            calculateTotalProductPrice={calculateTotalProductPrice()}
+                        />
                         <PaymentMethods />
                     </div>
                 </div>

@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./Discount.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTicket } from "@fortawesome/free-solid-svg-icons";
+import { useUser } from '~/components/userContext';
+import axios from 'axios';
+import { API_URLS } from '~/utils/commonUtils';
+import { useToast } from '~/components/toastContext';
 
-const Discount = () => {
+const Discount = ({ onVoucherApplied, calculateTotalProductPrice }) => {
+    const { user } = useUser();
     const [selectedVoucher, setSelectedVoucher] = useState('');
     const [isVoucherListVisible, setVoucherListVisible] = useState(false);
-    const vouchers = [ 
-        {
-            title: 'WELCOME10',
-            detail: 'Giảm 10% đơn hàng đầu tiên có giá trị từ 300.000 ₫'
-        },
-        {
-            title: 'HELLOSUMMER20',
-            detail: 'Giảm 20% cho dịch vụ SPA - GROOMING từ ngày 01/04 - 07/04'
-        },
-        {
-            title: 'HELLOFALL15',
-            detail: 'Giảm 15% cho các sản phẩm quần áo từ ngày 01/09 - 07/09'
-        }
-    ];
+    const [vouchers, setVouchers] = useState([]);
+    const { showSuccessToast, showErrorToast } = useToast();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (user && user.id) {
+                try {
+                    const response = await axios.get(`${API_URLS.USERS}/${user.id}`);
+                    if (response.data && response.data.vouchers) {
+                        setVouchers(response.data.vouchers);
+                    } else {
+                        console.error("No vouchers found for this user.");
+                    }
+                } catch (error) {
+                    console.error("Error fetching vouchers:", error);
+                }
+            }
+        };
+        fetchUserData();
+    }, [user]);
 
     const handleInputChange = (e) => {
         setSelectedVoucher(e.target.value)
@@ -38,10 +45,50 @@ const Discount = () => {
         setVoucherListVisible(!isVoucherListVisible);
     };
 
+    const isVoucherValid = (voucherCode, totalOrderValue) => {
+        const currentDate = new Date();
+        const voucher = vouchers.find(vou => vou.title === voucherCode);
+        if (!voucher) {
+            return false;
+        }
+
+        const startDate = new Date(voucher.startDate);
+        const endDate = new Date(voucher.endDate);
+        if (currentDate < startDate || currentDate > endDate) {
+            return false;
+        }
+        
+        if (voucher.minOrderValue && totalOrderValue < voucher.minOrderValue) {
+            return false;
+        }
+
+        return true;
+    }
+
+    const applyVoucher = () => {
+        if (!selectedVoucher) {
+            showErrorToast("Bạn chưa chọn voucher nào!");
+            return;
+        }
+
+        if (isVoucherValid(selectedVoucher, calculateTotalProductPrice)) {
+            const appliedVoucher = vouchers.find(vou => vou.title === selectedVoucher);
+            onVoucherApplied(appliedVoucher);
+            showSuccessToast("Áp dụng voucher thành công!");
+        } else {
+            showErrorToast("Voucher không hợp lệ, vui lòng kiểm tra lại!");
+        }
+    }
+
+    const handleApplyVoucher = (e) => {
+        e.preventDefault();
+        applyVoucher();
+    };
+
     return (
         <>
             <h3 className={styles['discount-heading']}>Voucher <FontAwesomeIcon icon={faTicket} /></h3>
-            <form onSubmit={handleSubmit} className={styles['form-group-voucher']}>
+            <form onSubmit={handleApplyVoucher} className={styles['form-group-voucher']}>
                 <div className={styles['voucher-control']}>
                     <input
                         type="text"
@@ -55,26 +102,32 @@ const Discount = () => {
                     <button className={`${styles['form-toggle']} ${styles['form-btn']}`} onClick={toggleVoucherList}>{isVoucherListVisible ? "Ẩn voucher" : "Chọn voucher"}</button>
                 </div>
                 {isVoucherListVisible && (
-                    <ul className={styles['voucher-list']}>
-                        {vouchers.map(voucher => (
-                            <li key={voucher.title}>
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="voucherRadio"
-                                        className={styles['voucher-radio']}
-                                        value={voucher.title}
-                                        checked={selectedVoucher === voucher.title}
-                                        onChange={handleVoucherChange}
-                                    />
-                                    <div className={styles['voucher-content']}>
-                                        <h4 className={styles['voucher-title']}>{voucher.title}</h4>
-                                        <p className={styles['voucher-detail']}>{voucher.detail}</p>
-                                    </div>
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
+                    vouchers.length > 0 ? (
+                        <ul className={styles['voucher-list']}>
+                            {vouchers.map(voucher => (
+                                <li key={voucher.title}>
+                                    <label>
+                                        <input
+                                            type="radio"
+                                            name="voucherRadio"
+                                            className={styles['voucher-radio']}
+                                            value={voucher.title}
+                                            checked={selectedVoucher === voucher.title}
+                                            onChange={handleVoucherChange}
+                                        />
+                                        <div className={styles['voucher-content']}>
+                                            <h4 className={styles['voucher-title']}>{voucher.title}</h4>
+                                            <p className={styles['voucher-detail']}>{voucher.detail}</p>
+                                        </div>
+                                    </label>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <ul className={styles['voucher-list']}>
+                            <p className={styles['no-voucher-message']}>Bạn chưa có voucher nào!</p>
+                        </ul>
+                    )
                 )}
             </form>
         </>

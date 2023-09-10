@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./Form.module.css";
-import { REGEX } from "~/utils/commonUtils";
+import { API_URLS, REGEX } from "~/utils/commonUtils";
 import { useUser } from "~/components/userContext"
 import { useToast } from "~/components/toastContext";
 
@@ -13,14 +13,13 @@ const SignUp = () => {
     const router = useRouter();
     const { setUser } = useUser();
     const { showSuccessToast, showErrorToast } = useToast();
-    const USER_URL = "http://localhost:3001/api/users";
 
     const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
         if (loading) return;
         setLoading(true);
 
         try {
-            const usersResponse = await axios.get(USER_URL);
+            const usersResponse = await axios.get(API_URLS.USERS);
             const matchedUserByPhone = usersResponse.data.find(user => user.phone === values.phone);
             const matchedUserByEmail = values.email && usersResponse.data.find(user => user.email === values.email);
 
@@ -39,7 +38,7 @@ const SignUp = () => {
             }
 
             const { confirmPassword, ...userToSave } = values;
-            const response = await axios.post(USER_URL, userToSave);
+            const response = await axios.post(API_URLS.USERS, userToSave);
             const createdUser = response.data;
 
             const safeUser = { ...createdUser };

@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import styles from "./Form.module.css";
-import { REGEX } from "~/utils/commonUtils";
+import { API_URLS, REGEX } from "~/utils/commonUtils";
 import { useUser } from "~/components/userContext";
 import { useToast } from "~/components/toastContext";
 
@@ -13,7 +13,6 @@ const Login = () => {
     const router = useRouter();
     const { setUser } = useUser();
     const { showSuccessToast, showErrorToast } = useToast();
-    const USER_URL = "http://localhost:3001/api/users";
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user"));
@@ -29,7 +28,7 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const usersResponse = await axios.get(USER_URL);
+            const usersResponse = await axios.get(API_URLS.USERS);
             const matchedUser = usersResponse.data.find(user =>
                 (user.email === values.emailOrPhone || user.phone === values.emailOrPhone) &&
                 user.password === values.password

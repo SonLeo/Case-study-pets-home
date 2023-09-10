@@ -9,7 +9,6 @@
 .payment-method-item {
     display: inline-block;
     border: 1px solid #ccc;
-    padding: 8px 16px;
     color: #aaa;
     cursor: pointer;
 }
@@ -30,12 +29,13 @@
 .payment-method {
     position: relative;
     cursor: pointer;
+    padding: 8px 16px;
 }
 
 .payment-method__tick {
     position: absolute;
-    right: -15px;
-    bottom: -4px;
+    right: 1px;
+    bottom: 4px;
     width: 10px;
     height: 10px;
     font-size: 12px;
