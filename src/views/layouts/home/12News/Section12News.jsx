@@ -2,13 +2,14 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Section12.module.css"
+import { API_URLS } from "~/utils/commonUtils";
 
 const Section12 = () => {
     const [posts, setPosts] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/posts')
+        axios.get(API_URLS.POSTS)
             .then(response => {
                 setPosts(response.data.slice(-10));
             })

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Checkout.module.css";
 import { useUser } from "~/components/userContext";
 import { API_URLS, formatCurrency } from '~/utils/commonUtils';
@@ -10,13 +10,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEquals, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useToast } from "~/components/toastContext";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 
 const Checkout = () => {
-    const { user } = useUser();
-    const [cartItems, setCartItems] = useState([]);
-    const shippingCost = 30000;
     const [discount, setDiscount] = useState(0);
+    const [cartId, setCartId] = useState(null);
+    const { user } = useUser();
     const { showSuccessToast, showErrorToast } = useToast();
+    const router = useRouter();
+    const shippingCost = 30000;
+    const selectedProducts = useSelector(state => state.cart.selectedItems);
 
     const [shippingInfo, setShippingInfo] = useState({
         receiver: user ? user.username : "",
@@ -25,35 +29,93 @@ const Checkout = () => {
         note: ""
     });
 
-    const handleShippingInfoChange = (updatedInfo) => {
-        setShippingInfo(updatedInfo);
-    };
+    useEffect(() => {
+        if (selectedProducts.length === 0) {
+            showSuccessToast("Bạn chưa chọn sản phẩm để thanh toán!");
+            router.push('/cart');
+        }
+    }, []);
 
     useEffect(() => {
         if (user && user.id) {
             axios.get(`${API_URLS.CARTS}?userId=${user.id}`)
                 .then(response => {
                     if (response.data && response.data.length > 0) {
-                        setCartItems(response.data[0].cartItems);
+                        const userCart = response.data[0];
+                        setCartId(userCart.id);
                     }
                 })
                 .catch(error => {
-                    console.error("Error fetching cart items:", error);
+                    console.error("Error fetching cart:", error);
                 });
         }
     }, [user]);
 
+    useEffect(() => {
+        setShippingInfo({
+            receiver: user ? user.username : "",
+            phone: user ? user.phone : "",
+            address: user ? user.address : "",
+            note: ""
+        });
+    }, [user]);
+
+    const handleShippingInfoChange = (updatedInfo) => {
+        setShippingInfo(updatedInfo);
+    };
+
     const handleCheckout = async () => {
         try {
-            const response = await axios.put(`${API_URLS.USERS}/${user.id}`, {
-                ...user,
-                shippingDetails: shippingInfo
-            });
+            const newOrder = {
+                userId: user.id,
+                date: new Date().toISOString(),
+                totalAmount: calculateTotalAmountAfterDiscount(),
+                status: "processing",
+                note: shippingInfo.note,
+                shipping: {
+                    address: shippingInfo.address,
+                    estimateDelivery: new Date(new Date().getTime() + (7 * 24 * 60 * 60 * 1000)).toISOString(),
+                    recipientName: shippingInfo.receiver,
+                    recipientPhone: shippingInfo.phone
+                },
+                history: [{
+                    date: new Date().toISOString(),
+                    action: "Order created"
+                }],
+                payment: {
+                    method: "cash",
+                    status: "paid",
+                    transactionId: null
+                },
+                orderItems: selectedProducts.map(item => ({
+                    productId: item.productId,
+                    quantity: item.quantity,
+                    productName: item.productName,
+                    price: item.price_new,
+                    link: "",
+                    image: item.image
+                }))
+            };
 
-            if (response.status === 200) {
-                showSuccessToast("Cập nhật thành công!");
+            const response = await axios.post(`${API_URLS.ORDERS}`, newOrder);
+
+            if (response.status === 200 || response.status === 201) {
+                showSuccessToast("Đặt hàng thành công!");
+                if (cartId) {
+                    const cartResponse = await axios.get(`${API_URLS.CARTS}/${cartId}`);
+                    const currentCartItems = cartResponse.data.cartItems;
+                    const remainingItems = currentCartItems.filter(item =>
+                        !selectedProducts.some(selectedItem => selectedItem.productId === item.productId && selectedItem.id === item.id)
+                    );
+                    
+                    await axios.put(`${API_URLS.CARTS}/${cartId}`, {
+                        ...cartResponse.data,
+                        cartItems: remainingItems
+                    });
+                }
+                router.push(`/order`);
             } else {
-                showErrorToast("Cập nhật thất bại!");
+                showErrorToast("Đặt hàng thất bại!");
             }
         } catch (error) {
             showErrorToast("Có lỗi xảy ra, vui lòng thử lại!");
@@ -61,7 +123,7 @@ const Checkout = () => {
     }
 
     const calculateTotalProductPrice = () => {
-        return cartItems.reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
+        return selectedProducts.reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
     }
 
     const onVoucherApplied = (voucher) => {
@@ -92,7 +154,7 @@ const Checkout = () => {
                     <div className="col-lg-6 col-xl-6">
                         <h3 className={styles['checkout-sub-heading']}>Sản phẩm</h3>
                         <ul className={styles['product-list']}>
-                            {cartItems.map(item => (
+                            {selectedProducts.map(item => (
                                 <li className={styles['product-item']} key={item.id}>
                                     <div className={styles['product-image']}><img src={item.image} /></div>
                                     <div className={styles['product-details']}>
@@ -136,7 +198,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
                                 <div className="col-lg-6 col-xl-6">
-                                    <button className={styles['checkout-btn']} onClick={handleCheckout}>Đặt hàng ngay   </button>
+                                    <button className={styles['checkout-btn']} onClick={handleCheckout}>Đặt hàng ngay</button>
                                 </div>
                             </div>
                         </div>

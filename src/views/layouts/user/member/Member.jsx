@@ -1,6 +1,7 @@
+import { formatDate } from "~/utils/commonUtils";
 import styles from "./Member.module.css";
 
-const Member = ({ user, formatDate }) => {
+const Member = ({ user }) => {
     return (
         <div className={styles.member}>
             <div className={styles['member-avatar']}>

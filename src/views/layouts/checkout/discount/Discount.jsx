@@ -19,10 +19,10 @@ const Discount = ({ onVoucherApplied, calculateTotalProductPrice }) => {
             if (user && user.id) {
                 try {
                     const response = await axios.get(`${API_URLS.USERS}/${user.id}`);
-                    if (response.data && response.data.vouchers) {
+                    if (response.data && Array.isArray(response.data.vouchers)) {
                         setVouchers(response.data.vouchers);
                     } else {
-                        console.error("No vouchers found for this user.");
+                        setVouchers([]);
                     }
                 } catch (error) {
                     console.error("Error fetching vouchers:", error);

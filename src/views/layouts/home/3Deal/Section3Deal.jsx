@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import ProductItem from '~/components/productItem/ProductItem';
 import styles from './Section3.module.css';
+import { API_URLS } from '~/utils/commonUtils';
 
 const Section3 = () => {
     const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ const Section3 = () => {
     const PRODUCTS_PER_SLIDE = 5;
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/products')
+        axios.get(API_URLS.PRODUCTS)
             .then(response => {
                 setProducts(response.data);
             })

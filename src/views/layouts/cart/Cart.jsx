@@ -3,22 +3,21 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useUser } from "~/components/userContext";
 import styles from "./Cart.module.css"
-import { API_URLS, formatCurrency } from '~/utils/commonUtils';
+import { API_URLS, formatCurrency, calculateAmount } from '~/utils/commonUtils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from "next/router";
 import { useToast } from "~/components/toastContext";
+import { useDispatch, useSelector } from "react-redux";
+import { SET_CART_ITEMS, SET_SELECTED_ITEMS } from "~/rudux/actions/cartActions";
 
 const Cart = () => {
-    const [cartItems, setCartItems] = useState([])
-    const [isAllChecked, setIsAllChecked] = useState(false);
+    const dispatch = useDispatch();
     const { user } = useUser();
     const router = useRouter();
     const { showErrorToast } = useToast();
-
-    const calculateAmount = (price, quantity) => {
-        return price * quantity;
-    }
+    const cartItems = useSelector(state => state.cart.cartItems);
+    const [isAllChecked, setIsAllChecked] = useState(false);
 
     useEffect(() => {
         if (user && user.id) {
@@ -26,7 +25,7 @@ const Cart = () => {
                 .then(response => {
                     if (response.data && response.data.length > 0) {
                         const updatedCartItems = response.data[0].cartItems.map(item => ({ ...item, isChecked: false }));
-                        setCartItems(updatedCartItems);
+                        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
                     }
                 })
                 .catch(error => {
@@ -38,23 +37,20 @@ const Cart = () => {
     const handleSelectAll = () => {
         const newIsAllChecked = !isAllChecked;
         setIsAllChecked(newIsAllChecked);
-        setCartItems(cartItems.map(item => ({ ...item, isChecked: newIsAllChecked })));
+        const updatedCartItems = cartItems.map(item => ({ ...item, isChecked: newIsAllChecked }));
+        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
     }
 
     const handleProductCheck = (itemId) => {
-        setCartItems(prevCartItems => {
-            const newCartItems = prevCartItems.map(item => {
-                if (item.id === itemId) {
-                    return { ...item, isChecked: !item.isChecked }
-                }
-                return item;
-            });
-
-            const allChecked = newCartItems.every(item => item.isChecked);
-            setIsAllChecked(allChecked);
-
-            return newCartItems;
+        const updatedCartItems = cartItems.map(item => {
+            if (item.id === itemId) {
+                return { ...item, isChecked: !item.isChecked }
+            }
+            return item;
         });
+        const allChecked = updatedCartItems.every(item => item.isChecked);
+        setIsAllChecked(allChecked);
+        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
     };
 
     const handleDeleteSelected = async () => {
@@ -67,7 +63,7 @@ const Cart = () => {
             });
 
             if (response.status === 200) {
-                setCartItems(updatedCartItems);
+                dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
             } else {
                 console.error("Error updating the cart items:", response);
             }
@@ -77,72 +73,58 @@ const Cart = () => {
     };
 
     const handleQuantityChange = (itemId, change) => {
-        setCartItems(prevCartItems => {
-            return prevCartItems.map(item => {
-                if (item.id === itemId) {
-                    const newQuantity = item.quantity + change;
-                    return { ...item, quantity: newQuantity };
-                }
-                return item;
-            })
+        const updatedCartItems = cartItems.map(item => {
+            if (item.id === itemId) {
+                const newQuantity = item.quantity + change;
+                return { ...item, quantity: newQuantity};
+            }
+            return item;
         })
+        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
     }
 
     const handleInputChange = (itemId, e) => {
         const value = e.target.value;
-        setCartItems(prevItems => prevItems.map(item => {
+        const updatedCartItems = cartItems.map(item => {
             if (item.id === itemId) {
                 return { ...item, quantity: value };
             }
-
             return item;
-        }))
+        })
+        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
     }
 
     const handleInputBlur = (itemId, e) => {
         const value = parseInt(e.target.value);
         const itemStock = cartItems.find(item => item.id === itemId)?.stockQuantity || 0;
 
-        if (isNaN(value) || value < 0) {
-            setCartItems(prevItems => prevItems.map(item => {
-                if (item.id == itemId) {
+        const updatedCartItems = cartItems.map(item => {
+            if (item.id === itemId) {
+                if (isNaN(value) || value < 0) {
                     return { ...item, quantity: item.quantity };
+                } else if (value > itemStock) {
+                    showErrorToast(`sản phẩm bạn chọn chỉ còn ${itemStock} sản phẩm`);
+                    return { ...item, quantity: itemStock };
+                } else {
+                    return { ...item, quantity: value };
                 }
-                return item;
-            }));
-        } else if (value > itemStock) {
-            showErrorToast(`sản phẩm bạn chọn chỉ còn ${itemStock} sản phẩm`);
-            setCartItems(prevCartItems => {
-                return prevCartItems.map(item => {
-                    if (item.id === itemId) {
-                        return { ...item, quantity: itemStock };
-                    }
-                    return item;
-                })
-            })
-        } else {
-            setCartItems(prevCartItems => {
-                return prevCartItems.map(item => {
-                    if (item.id === itemId) {
-                        return { ...item, quantity: value };
-                    }
-                    return item;
-                })
-            })
-        }
+            }
+            return item;
+        });
+        dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems });
     }
 
     const handleDeleteItem = async (itemId) => {
         const updatedCartItems = cartItems.filter(item => item.id !== itemId)
         const cartId = cartItems[0].cartId;
-        
+
         try {
             const response = await axios.put(`${API_URLS.CARTS}/${cartId}`, {
                 cartItems: updatedCartItems
             });
 
             if (response.status === 200) {
-                setCartItems(updatedCartItems);
+                dispatch({ type: SET_CART_ITEMS, payload: updatedCartItems })
             } else {
                 console.error("Error updating the cart items:", response);
             }
@@ -153,15 +135,17 @@ const Cart = () => {
 
     const handlePurchase = () => {
         if (selectedItemsCount > 0) {
+            const selectedProducts = cartItems.filter(item => item.isChecked);
+            dispatch({ type: SET_SELECTED_ITEMS, payload: selectedProducts });
             router.push('/checkout');
         } else {
             showErrorToast('Bạn chưa chọn sản phẩm nào!')
         }
-    }
+    };
 
     const selectedItemsCount = cartItems.filter(item => item.isChecked).length;
     const totalAmount = cartItems.filter(item => item.isChecked).reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
-    
+
     return (
         <>
             <section className="section">
@@ -197,15 +181,15 @@ const Cart = () => {
                                                 <span style={{ marginLeft: "10px" }} className={styles['price-new']}>{formatCurrency(item.price_new)}</span>
                                             </div>
                                             <div className={styles['product-quantity']}>
-                                                <button 
+                                                <button
                                                     className={`${styles.btn} ${styles['quantity-decrease']}`}
                                                     onClick={() => handleQuantityChange(item.id, -1)}
                                                     disabled={item.quantity <= 0}
                                                 >
                                                     <FontAwesomeIcon icon={faMinus} />
                                                 </button>
-                                                <input 
-                                                    type="text" 
+                                                <input
+                                                    type="text"
                                                     value={item.quantity}
                                                     onChange={(e) => handleInputChange(item.id, e)}
                                                     onBlur={(e) => handleInputBlur(item.id, e)}

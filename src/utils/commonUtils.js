@@ -9,8 +9,23 @@ export const formatCurrency = (amount) => {
     return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
 
+export const formatDate = (date) => {
+    const d = new Date(date);
+    const day = ("0" + d.getDate()).slice(-2);
+    const month = ("0" + (d.getMonth() + 1)).slice(-2);
+    const year = d.getFullYear();
+
+    return `${day}/${month}/${year}`;
+}
+
+export const calculateAmount = (price, quantity) => {
+    return price * quantity;
+}
+
 export const API_URLS = {
     USERS: "http://localhost:3001/api/users",
     CARTS: "http://localhost:3001/api/carts",
-    ORDERS: "http://localhost:3001/api/orders"
+    ORDERS: "http://localhost:3001/api/orders",
+    PRODUCTS: "http://localhost:3001/api/products",
+    POSTS: "http://localhost:3001/api/posts"
 }

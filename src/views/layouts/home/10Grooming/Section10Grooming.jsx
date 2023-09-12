@@ -1,4 +1,5 @@
 import ProductSection from "~/components/home/ProductSection";
+import { API_URLS } from "~/utils/commonUtils";
 
 const Section10 = () => {
     return (
@@ -11,7 +12,7 @@ const Section10 = () => {
                 { href: "/collections/chai-xit-khu-mui", title: "Chai xịt khử mùi" },
                 { href: "/collections/cham-soc-tai-mat-mieng", title: "Chăm sóc tai - mắt - miệng" }
             ]}
-            apiUrl="http://localhost:3001/api/products"
+            apiUrl={API_URLS.PRODUCTS}
             categoryFilter="Làm đẹp cho cún - miu"
         />
     )

@@ -21,14 +21,6 @@ const AccountInfo = () => {
         }
     }, [user, isClient]);
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const day = String(date.getUTCDate()).padStart(2, '0');
-        const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-        const year = date.getUTCFullYear();
-        return `${day}-${month}-${year}`;
-    }
-
     if (loading) {
         return (
             <section className="section">
@@ -47,7 +39,7 @@ const AccountInfo = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-xl-6">
-                            <Member user={user} formatDate={formatDate} />
+                            <Member user={user} />
                         </div>
                         <div className="col-lg-6 col-xl-6">
                             <EditInfo user={user} onUpdated={setUser} />

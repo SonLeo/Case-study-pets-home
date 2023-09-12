@@ -1,4 +1,5 @@
 import ProductSection from "~/components/home/ProductSection";
+import { API_URLS } from "~/utils/commonUtils";
 
 const Section11 = () => {
     return (
@@ -11,7 +12,7 @@ const Section11 = () => {
                 { href: "/collections/thuoc-tri-ki-sinh", title: "Thuốc trị kí sinh" },
                 { href: "/collections/thuoc-tri-viem-da", title: "Thuốc trị viêm da" }
             ]}
-            apiUrl="http://localhost:3001/api/products"
+            apiUrl={API_URLS.PRODUCTS}
             categoryFilter="Thuốc, Vitamin và điều trị"
         />
     )

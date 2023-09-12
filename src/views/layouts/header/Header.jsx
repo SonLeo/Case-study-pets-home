@@ -4,6 +4,7 @@ import { useUser } from "~/components/userContext";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URLS } from "~/utils/commonUtils";
 
 export default function Header() {
     const router = useRouter();
@@ -13,13 +14,13 @@ export default function Header() {
 
     useEffect(() => {
         if (user) {
-            axios.get(`http://localhost:3001/api/carts?userId=${user.id}`)
+            axios.get(`${API_URLS.CARTS}?userId=${user.id}`)
                 .then(response => {
                     if (response.data && response.data.length > 0) {
                         const userCart = response.data[0];
                         setCart(userCart.cartItems);
-
-                        const itemsCount = userCart.cartItems.reduce((total, item) => total + item.quantity, 0);
+    
+                        const itemsCount = calculateTotalItems(userCart.cartItems);
                         setTotalItems(itemsCount);
                     }
                 })
@@ -28,6 +29,10 @@ export default function Header() {
                 })
         }
     }, [user])
+
+    const calculateTotalItems = (cartItems) => {
+        return cartItems.reduce((total, item) => total + item.quantity, 0);
+    }
 
     const handleLogout = async (e) => {
         e.preventDefault();
