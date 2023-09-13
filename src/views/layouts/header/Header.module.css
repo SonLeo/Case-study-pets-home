@@ -398,14 +398,13 @@
     min-width: 260px;
 }
 
+.user-order,
 .user-setting {
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
 
-.user-setting span {
-    margin-left: 30px;
-}
-
+.user-order span,
+.user-setting span,
 .user-logout span {
     margin-left: 30px;
 }

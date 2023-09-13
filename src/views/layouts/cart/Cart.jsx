@@ -59,6 +59,7 @@ const Cart = () => {
 
         try {
             const response = await axios.put(`${API_URLS.CARTS}/${cartId}`, {
+                userId: user.id,
                 cartItems: updatedCartItems
             });
 
@@ -120,6 +121,7 @@ const Cart = () => {
 
         try {
             const response = await axios.put(`${API_URLS.CARTS}/${cartId}`, {
+                userId: user.id,
                 cartItems: updatedCartItems
             });
 
@@ -128,7 +130,7 @@ const Cart = () => {
             } else {
                 console.error("Error updating the cart items:", response);
             }
-        } catch {
+        } catch (error) {
             console.error("Error updating cart items:", error);
         }
     };

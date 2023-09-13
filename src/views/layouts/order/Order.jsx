@@ -1,4 +1,5 @@
 import axios from 'axios';
+import shorid from 'shortid';
 import { useEffect, useState } from 'react';
 import styles from './Order.module.css';
 import { useUser } from '~/components/userContext';
@@ -6,6 +7,9 @@ import { API_URLS, formatCurrency, formatDate, calculateAmount } from '~/utils/c
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useToast } from '~/components/toastContext';
+import { useDispatch } from 'react-redux';
+import { ADD_PREVIOUS_ORDER_TO_CART, addPreviousOrderToCart } from '~/rudux/actions/cartActions';
+import { useRouter } from 'next/router';
 
 const STATUS_MAP = {
     'Tất cả': null,
@@ -21,8 +25,10 @@ const getVietnameseTitle = (englishStatus) => {
 
 const Order = () => {
     const { user } = useUser();
-    const [selectedTab, setSelectedTab] = useState('Tất cả');
+    const dispatch = useDispatch();
+    const router = useRouter();
     const [orders, setOrders] = useState([]);
+    const [selectedTab, setSelectedTab] = useState('Tất cả');
     const { showSuccessToast, showErrorToast } = useToast();
 
     useEffect(() => {
@@ -56,6 +62,11 @@ const Order = () => {
             });
     };
 
+    const rePurchase = (orderItems) => {
+        dispatch(addPreviousOrderToCart({ userId: user.id, orderItems }));
+        router.push("/cart");
+    }
+    
     const renderTabContent = () => {
         const filteredOrders = STATUS_MAP[selectedTab]
             ? orders.filter(order => order.status === STATUS_MAP[selectedTab])
@@ -76,7 +87,7 @@ const Order = () => {
                         </div>
                         <div className={styles['order-body']}>
                             {order.orderItems.map(product => (
-                                <div key={product.productId} className={styles['order-product']}>
+                                <div key={shorid.generate()} className={styles['order-product']}>
                                     <div className={styles['product-detail']}>
                                         <img className={styles['product-img']} src={product.image} />
                                         <h4 className={styles['product-title']}>{product.productName}</h4>
@@ -93,7 +104,7 @@ const Order = () => {
                         <div className={styles['order-action']}>
                             {order.status === 'processing'
                                 ? <button className={styles['btn-action']} onClick={() => cancelOrder(order.id)}>Hủy đơn</button>
-                                : <button className={styles['btn-action']}>Mua lại</button>
+                                : <button className={styles['btn-action']} onClick={() => rePurchase(order.orderItems)}>Mua lại</button>
                             }
                             <div className={styles['order-total']}>Tổng tiền: {formatCurrency(order.totalAmount)}</div>
                         </div>

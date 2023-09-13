@@ -3744,9 +3744,50 @@
   ],
   "carts": [
     {
-      "cartItems": [],
-      "id": 1,
-      "userId": 2
+      "userId": 2,
+      "cartItems": [
+        {
+          "id": 1,
+          "cartId": 1,
+          "productId": 231,
+          "productName": "Nhỏ gáy Advocate trị nội ngoại ký sinh cho mèo",
+          "description": "",
+          "quantity": 1,
+          "link": "/products/nho-gay-advocate-tri-noi-ngoai-ky-sinh-cho-meo",
+          "image": "//product.hstatic.net/1000104513/product/51_9a471222513340fdb77d11eea3879406_large.png",
+          "price_old": null,
+          "price_new": 410000,
+          "like": true,
+          "rate": 5,
+          "sold": 100,
+          "stockQuantity": 100,
+          "categories": [
+            "Thuốc, Vitamin và điều trị"
+          ],
+          "isChecked": false
+        },
+        {
+          "id": 2,
+          "productId": 230,
+          "quantity": 2,
+          "productName": "Nexgard Spectra trị nội ngoại ký sinh cho chó",
+          "price": 265000,
+          "link": "/products/nexgard-spectra-tri-noi-ngoai-ky-sinh-cho-cho",
+          "image": "//product.hstatic.net/1000104513/product/52_1ee946fb3490402d87283258669c9655_large.png",
+          "description": "",
+          "price_old": null,
+          "price_new": 265000,
+          "like": true,
+          "rate": 5,
+          "sold": 100,
+          "stockQuantity": 100,
+          "categories": [
+            "Thuốc, Vitamin và điều trị"
+          ],
+          "cartId": 1
+        }
+      ],
+      "id": 1
     }
   ],
   "orders": [
@@ -4091,7 +4132,7 @@
       "userId": 2,
       "date": "2023-09-11T12:37:09.592Z",
       "totalAmount": 255250,
-      "status": "processing",
+      "status": "cancelled",
       "note": "",
       "shipping": {
         "address": "Thanh Xuân - Hà Nội",

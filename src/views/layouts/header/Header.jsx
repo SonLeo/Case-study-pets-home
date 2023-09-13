@@ -382,6 +382,12 @@ export default function Header() {
                                                         <span className={style['']}>Thông tin tài khoản</span>
                                                     </Link>
                                                 </li>
+                                                <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-order']}`}>
+                                                    <Link href={`/order`} title="Đơn mua">
+                                                        <img className={style['user-avatar']} src={user.avatar || "/assets/icons/Full-Cart.svg"} alt="User Order" />
+                                                        <span className={style['']}>Thông tin đơn hàng</span>
+                                                    </Link>
+                                                </li>
                                                 <li className={`${style.categoryItem} ${style.mainCategoryItem} ${style['user-logout']}`}>
                                                     <Link href="/" onClick={handleLogout}>
                                                         <img className={`${style['logout-icon']}`} src="/assets/icons/Logout-line.svg" alt="Log out" />

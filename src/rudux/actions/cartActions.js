@@ -6,6 +6,7 @@ export const FETCH_CART_ERROR = 'FETCH_CART_ERROR';
 export const SET_CART_ITEMS = 'SET_CART_ITEMS';
 export const SET_SELECTED_ITEMS = 'SET_SELECTED_ITEMS';
 export const FETCH_CART_ITEMS = 'FETCH_CART_ITEMS';
+export const ADD_PREVIOUS_ORDER_TO_CART = 'ADD_PREVIOUS_ORDER_TO_CART';
 
 export const addToCart = (product) => ({
     type: ADD_TO_CART,
@@ -30,4 +31,9 @@ export const fetchCartSuccess = (cartItems) => ({
 export const fetchCartError = (error) => ({
     type: FETCH_CART_ERROR,
     payload: error
+});
+
+export const addPreviousOrderToCart = (orderItems) => ({
+    type: ADD_PREVIOUS_ORDER_TO_CART,
+    payload: orderItems
 });

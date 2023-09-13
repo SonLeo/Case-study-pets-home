@@ -81,10 +81,18 @@
 }
 
 .order-title {
+    width: 40%;
     font-size: 22px;
 }
 
+.order-date {
+    text-align: center;
+    width: 30%;
+}
+
 .order-status {
+    text-align: right;
+    width: 30%;
     color: #74c05e;
 }
 
@@ -101,8 +109,19 @@
 }
 
 .product-detail {
+    width: 40%;
     display: flex;
     align-items: center;
+}
+
+.product-calculate {
+    width: 30%;
+    text-align: center;
+}
+
+.product-amount {
+    width: 30%;
+    text-align: right;
 }
 
 .product-img {

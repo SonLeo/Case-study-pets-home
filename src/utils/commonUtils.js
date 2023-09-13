@@ -6,8 +6,12 @@ export const REGEX = {
 }
 
 export const formatCurrency = (amount) => {
+    if (isNaN(amount) || amount === undefined) {
+        console.error(`Invalid amount passed to formatCurrency: ${amount}`);
+        return '';
+    }
     return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
-}
+};
 
 export const formatDate = (date) => {
     const d = new Date(date);

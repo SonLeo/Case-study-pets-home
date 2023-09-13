@@ -5,20 +5,21 @@ import {
     DELETE_FROM_CART, 
     FETCH_CART_SUCCESS, 
     FETCH_CART_ERROR, 
-    FETCH_CART_ITEMS
+    FETCH_CART_ITEMS,
+    ADD_PREVIOUS_ORDER_TO_CART,
+    SET_CART_ITEMS
 } from '../actions/cartActions';
 
 function* handleError(error, errorMessage) {
     console.error(errorMessage, error);
-    yield put(FETCH_CART_ERROR(errorMessage + error.toString()));
+    yield put({ type: FETCH_CART_ERROR, payload: errorMessage + error.toString() });
 }
 
 function* fetchCartItems(action) {
     try {
         const response = yield call(axios.get, `${API_URLS.CARTS}?userId=${action.payload.userId}`);
-        
         if (response.data && response.data.length > 0) {
-            yield put({ type: 'SET_CART_ITEMS', payload: response.data[0].cartItems });
+            yield put({ type: SET_CART_ITEMS, payload: response.data[0].cartItems });
         }
     } catch (error) {
         yield* handleError(error, 'Error fetching cart items: ');
@@ -30,16 +31,68 @@ function* deleteFromCartSaga(action) {
         const cartId = action.payload.cartId;
         const updatedCartItems = action.payload.cartItems.filter(item => item.id !== action.payload.itemId);
         const response = yield call(axios.put, `${API_URLS.CARTS}/${cartId}`, {
+            userId: action.payload.userId,
             cartItems: updatedCartItems
         });
-
         if (response.status === 200) {
-            yield put(FETCH_CART_SUCCESS(updatedCartItems));
+            yield put({ type: FETCH_CART_SUCCESS, payload: updatedCartItems });
         } else {
             yield* handleError(new Error(`Response status: ${response.status}`), "Error updating the cart items: ");
         }
     } catch (error) {
         yield* handleError(error, 'Error updating cart items: ');
+    }
+}
+
+function* addPreviousOrderToCartSaga(action) {
+    try {
+        const { userId, orderItems } = action.payload;
+        const productIds = orderItems.map(item => item.productId);
+        const productsResponse = yield call(axios.get, `${API_URLS.PRODUCTS}`, {
+            params: { id: productIds }
+        });
+        const productsData = productsResponse.data;
+        
+        const cartResponse = yield call(axios.get, `${API_URLS.CARTS}?userId=${userId}`);
+        const cart = cartResponse.data[0];
+
+        const updatedCartItems = cart ? [...cart.cartItems] : [];
+
+        orderItems.forEach(orderItem => {
+            const product = productsData.find(prod => prod.id === orderItem.productId);
+            const existingItem = updatedCartItems.find(cartItem => cartItem.productId === orderItem.productId);
+            if (existingItem) {
+                existingItem.quantity += orderItem.quantity;
+            } else {
+                updatedCartItems.push({
+                    ...product,
+                    ...orderItem,
+                    id: product.id,
+                    cartId: cart ? cart.id : undefined
+                });
+            }
+        });
+
+        let response;
+        if (!cart) {
+            response = yield call(axios.post, `${API_URLS.CARTS}`, {
+                userId,
+                cartItems: updatedCartItems
+            });
+        } else {
+            response = yield call(axios.put, `${API_URLS.CARTS}/${cart.id}`, {
+                userId,
+                cartItems: updatedCartItems
+            });
+        }
+
+        if (response.status >= 200 && response.status < 300) {
+            yield put({ type: FETCH_CART_SUCCESS, payload: updatedCartItems });
+        } else {
+            yield* handleError(new Error(`Response status: ${response.status}`), "Error updating/creating the cart: ");
+        }
+    } catch (error) {
+        yield* handleError(error, 'Error adding previous order items to cart: ');
     }
 }
 
@@ -49,4 +102,8 @@ export function* watchFetchCartItems() {
 
 export function* watchDeleteFromCart() {
     yield takeLatest(DELETE_FROM_CART, deleteFromCartSaga);
+}
+
+export function* watchAddPreviousOrderToCart() {
+    yield takeLatest(ADD_PREVIOUS_ORDER_TO_CART, addPreviousOrderToCartSaga);
 }
