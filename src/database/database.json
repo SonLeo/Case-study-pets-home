@@ -13,7 +13,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -29,7 +32,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -45,7 +51,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -61,7 +70,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -77,7 +89,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -93,7 +108,10 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Combo sản phẩm cho HOT"
+        {
+          "name": "Combo sản phẩm HOT",
+          "slug": "combo-san-pham-hot"
+        }
       ]
     },
     {
@@ -109,7 +127,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -125,7 +150,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -141,7 +173,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -157,7 +196,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -173,7 +219,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -189,7 +242,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -205,7 +265,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc trị kí sinh"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc trị ký sinh",
+          "slug": "thuoc-tri-ky-sinh"
+        }
       ]
     },
     {
@@ -221,7 +288,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -237,7 +315,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -253,7 +338,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -269,7 +361,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -285,7 +384,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -301,7 +407,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -317,7 +430,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -333,7 +453,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -349,7 +476,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -365,7 +499,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho cún"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Khuyến mãi Pate cho cún",
+          "slug": "khuyen-mai-pate-cho-cun"
+        }
       ]
     },
     {
@@ -381,7 +522,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -397,7 +545,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -413,7 +568,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -429,7 +591,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -445,7 +614,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -461,7 +637,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -477,7 +660,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -493,7 +683,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -509,7 +706,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Khuyến mãi Pate cho miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Khuyến mãi Pate cho miu",
+          "slug": "khuyen-mai-pate-cho-miu"
+        }
       ]
     },
     {
@@ -525,7 +729,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -541,7 +752,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -557,7 +775,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -573,7 +798,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -589,7 +821,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -605,7 +844,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -621,7 +867,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -637,7 +890,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -653,7 +913,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -669,7 +936,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thức ăn hạt cho mèo",
+          "slug": "thuc-an-hat-cho-meo"
+        }
       ]
     },
     {
@@ -685,7 +959,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -701,7 +982,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -717,7 +1005,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -733,7 +1028,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -749,7 +1051,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -765,7 +1074,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -781,7 +1097,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -797,7 +1120,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -813,7 +1143,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -829,7 +1166,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -845,7 +1189,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -861,7 +1212,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -877,7 +1235,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -893,7 +1258,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -909,7 +1281,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -925,7 +1304,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -941,7 +1327,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -957,7 +1350,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -973,7 +1373,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -989,7 +1396,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1005,7 +1419,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1021,7 +1442,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1037,7 +1465,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1053,7 +1488,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1069,7 +1511,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1085,7 +1534,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1101,7 +1557,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1117,7 +1580,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1133,7 +1603,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thức ăn hạt cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thức ăn hạt cho chó",
+          "slug": "thuc-an-hat-cho-cho"
+        }
       ]
     },
     {
@@ -1149,7 +1626,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1165,7 +1649,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1181,7 +1672,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1197,7 +1695,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1213,7 +1718,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1229,7 +1741,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1245,7 +1764,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1261,7 +1787,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1277,7 +1810,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1293,7 +1833,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1309,7 +1856,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1325,7 +1879,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1341,7 +1902,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1357,7 +1925,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1373,7 +1948,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1389,7 +1971,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1405,7 +1994,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1421,7 +2017,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1437,7 +2040,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1453,7 +2063,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1469,7 +2086,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1485,7 +2109,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1501,7 +2132,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1517,7 +2155,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1533,7 +2178,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1549,7 +2201,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1565,7 +2224,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1581,7 +2247,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1597,7 +2270,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1613,7 +2293,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1629,7 +2316,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1645,7 +2339,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1661,7 +2362,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1677,7 +2385,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1693,7 +2408,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1709,7 +2431,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1725,7 +2454,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1741,7 +2477,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1757,7 +2500,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1773,7 +2523,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1789,7 +2546,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1805,7 +2569,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1821,7 +2592,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1837,7 +2615,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho chó"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho chó",
+          "slug": "pate-do-hop-sua-cho-cho"
+        }
       ]
     },
     {
@@ -1853,7 +2638,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1869,7 +2661,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1885,7 +2684,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1901,7 +2707,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1917,7 +2730,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1933,7 +2753,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1949,7 +2776,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1965,7 +2799,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1981,7 +2822,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -1997,7 +2845,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2013,7 +2868,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2029,7 +2891,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2045,7 +2914,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2061,7 +2937,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2077,7 +2960,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2093,7 +2983,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2109,7 +3006,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2125,7 +3029,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2141,7 +3052,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2157,7 +3075,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2173,7 +3098,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2189,7 +3121,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2205,7 +3144,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2221,7 +3167,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2237,7 +3190,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2253,7 +3213,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2269,7 +3236,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2285,7 +3259,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2301,7 +3282,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2317,7 +3305,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2333,7 +3328,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2349,7 +3351,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2365,7 +3374,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2381,7 +3397,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2397,7 +3420,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Pate, đồ hộp, sữa cho mèo"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Pate, đồ hộp, sữa cho mèo",
+          "slug": "pate-do-hop-sua-cho-meo"
+        }
       ]
     },
     {
@@ -2413,7 +3443,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2429,7 +3470,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2445,7 +3497,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2461,7 +3524,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2477,7 +3547,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2493,7 +3570,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2509,7 +3593,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2525,7 +3620,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2541,7 +3647,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2557,7 +3670,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2573,7 +3693,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2589,7 +3716,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2605,7 +3739,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2621,7 +3762,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2637,7 +3789,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2653,7 +3816,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2669,7 +3843,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2685,7 +3870,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2701,7 +3893,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2717,7 +3916,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2733,7 +3943,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2749,7 +3966,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2765,7 +3989,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2781,7 +4016,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2797,7 +4039,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2813,7 +4062,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2829,7 +4089,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2845,7 +4116,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2861,7 +4143,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2877,7 +4170,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2893,7 +4197,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2909,7 +4224,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2925,7 +4247,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2941,7 +4274,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2957,7 +4301,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2973,7 +4328,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -2989,7 +4355,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -3005,7 +4382,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -3021,7 +4409,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -3037,7 +4436,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Làm đẹp cho cún - miu"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Làm đẹp cho cún - miu",
+          "slug": "lam-dep-cho-cun-miu"
+        }
       ]
     },
     {
@@ -3053,7 +4463,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3069,7 +4486,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3085,7 +4509,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3101,7 +4532,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3117,7 +4555,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3133,7 +4578,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3149,7 +4601,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3165,7 +4624,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3181,7 +4647,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3197,7 +4670,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3213,7 +4693,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3229,7 +4716,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3245,7 +4739,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3261,7 +4762,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3277,7 +4785,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3293,7 +4808,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3309,7 +4831,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3325,7 +4854,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3341,7 +4881,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3357,7 +4908,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3373,7 +4935,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3389,7 +4962,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3405,7 +4989,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3421,7 +5012,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3437,7 +5035,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3453,7 +5058,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3469,7 +5081,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3485,7 +5104,18 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3501,7 +5131,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3517,7 +5154,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3533,7 +5177,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3549,7 +5200,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3565,7 +5223,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3581,7 +5246,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3597,7 +5269,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3613,7 +5292,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3629,7 +5315,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3645,7 +5338,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3661,7 +5361,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "cún",
+          "slug": "cun"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     },
     {
@@ -3677,7 +5384,14 @@
       "sold": 100,
       "stockQuantity": 100,
       "categories": [
-        "Thuốc, Vitamin và điều trị"
+        {
+          "name": "miu",
+          "slug": "miu"
+        },
+        {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
       ]
     }
   ],
@@ -3697,6 +5411,7 @@
       "username": "Trịnh Sơn",
       "email": "sontrinh@gmail.com",
       "phone": "0987123123",
+      "password": "@123123",
       "role": "Customer",
       "address": "Thanh Xuân - Hà Nội",
       "registrationDate": "2023-08-25T16:18:09.937Z",
@@ -3740,6 +5455,32 @@
           "address": "KHU TAP THE THANH XUAN BAC, THANH XUAN, HA NOI"
         }
       ]
+    },
+    {
+      "username": "Nguyễn Văn A",
+      "email": "anv@gmail.com",
+      "phone": "0987456456",
+      "password": "@123123",
+      "role": "Customer",
+      "address": "",
+      "registrationDate": "2023-09-13T12:41:00.511Z",
+      "membershipLevel": "Pet's Rookie",
+      "gender": 0,
+      "accumulatedPoints": 0,
+      "id": 3
+    },
+    {
+      "username": "Nguyễn Hữu Cầm",
+      "email": "nguyenhuucam91@gmail.com",
+      "phone": "0348921193",
+      "password": "@123456",
+      "role": "Customer",
+      "address": "",
+      "registrationDate": "2023-09-13T12:46:33.262Z",
+      "membershipLevel": "Pet's Rookie",
+      "gender": 0,
+      "accumulatedPoints": 0,
+      "id": 4
     }
   ],
   "carts": [
@@ -3762,19 +5503,19 @@
           "sold": 100,
           "stockQuantity": 100,
           "categories": [
-            "Thuốc, Vitamin và điều trị"
+            {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
           ],
           "isChecked": false
         },
         {
-          "id": 2,
-          "productId": 230,
-          "quantity": 2,
+          "id": 230,
           "productName": "Nexgard Spectra trị nội ngoại ký sinh cho chó",
-          "price": 265000,
-          "link": "/products/nexgard-spectra-tri-noi-ngoai-ky-sinh-cho-cho",
-          "image": "//product.hstatic.net/1000104513/product/52_1ee946fb3490402d87283258669c9655_large.png",
           "description": "",
+          "link": "",
+          "image": "//product.hstatic.net/1000104513/product/52_1ee946fb3490402d87283258669c9655_large.png",
           "price_old": null,
           "price_new": 265000,
           "like": true,
@@ -3782,8 +5523,14 @@
           "sold": 100,
           "stockQuantity": 100,
           "categories": [
-            "Thuốc, Vitamin và điều trị"
+            {
+          "name": "Thuốc, Vitamin và điều trị",
+          "slug": "thuoc-vitamin-va-dieu-tri"
+        }
           ],
+          "productId": 230,
+          "quantity": 3,
+          "price": 265000,
           "cartId": 1
         }
       ],

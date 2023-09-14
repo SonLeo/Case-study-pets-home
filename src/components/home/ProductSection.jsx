@@ -10,7 +10,9 @@ const ProductSection = ({ title, mainLink, subLinks, apiUrl, categoryFilter }) =
     useEffect(() => {
         axios.get(apiUrl)
             .then(response => {
-                const filteredProducts = categoryFilter ? response.data.filter(product => product.categories.includes(categoryFilter)) : response.data;
+                const filteredProducts = categoryFilter ? 
+                    response.data.filter(product => product.categories.some(category => category.name === categoryFilter)) :
+                    response.data;
                 setProducts(filteredProducts.slice(0, 10));
             })
             .catch(error => {

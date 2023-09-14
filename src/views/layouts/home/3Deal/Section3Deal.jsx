@@ -28,14 +28,16 @@ const Section3 = () => {
         changeTab(0);
     }, [products]);
 
-    const filterProductsByCategory = (category) => {
-        return products.filter(product => product.categories.includes(category));
+    const filterProductsByCategory = (categorySlug) => {
+        return products.filter(product =>
+            product.categories.some(category => category.slug === categorySlug)
+        );
     };
 
     const changeTab = (tabIndex) => {
         setActiveTab(tabIndex);
         setCurrentSlide(0);
-        const currentTabProducts = filterProductsByCategory(tabs[tabIndex]);
+        const currentTabProducts = filterProductsByCategory(tabs[tabIndex].slug);
         setFilteredProducts(currentTabProducts);
         setCurrentTabSlides(Math.ceil(currentTabProducts.length - PRODUCTS_PER_SLIDE + 1));
     };
@@ -52,7 +54,12 @@ const Section3 = () => {
         }
     };
 
-    const tabs = ['Combo sản phẩm cho HOT', 'Thuốc trị kí sinh', 'Khuyến mãi Pate cho cún', 'Khuyến mãi Pate cho miu'];
+    const tabs = [
+        { name: 'Combo sản phẩm HOT', slug: 'combo-san-pham-hot' },
+        { name: 'Thuốc trị ký sinh', slug: 'thuoc-tri-ky-sinh' },
+        { name: 'Khuyến mãi Pate cho cún', slug: 'khuyen-mai-pate-cho-cun' },
+        { name: 'Khuyến mãi Pate cho miu', slug: 'khuyen-mai-pate-cho-miu' }
+    ];
 
     return (
         <section className='section'>
@@ -60,27 +67,27 @@ const Section3 = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className={styles['section-heading']}>
-                            <Link href='/collections/hot-products'>
+                            <Link href='/collections/combo-san-pham-hot'>
                                 <h2>Deal nổi bật</h2>
                             </Link>
                         </div>
                     </div>
                     <div className="col-md-12">
                         <ul className={styles.tabs}>
-                            {tabs.map((tabTitle, index) => (
+                            {tabs.map((tab, index) => (
                                 <li
                                     key={index}
                                     className={`${styles['tab-item']} ${activeTab === index ? styles.active : ''}`}
                                     onClick={() => changeTab(index)}
                                 >
-                                    {tabTitle}
+                                    {tab.name}
                                 </li>
                             ))}
                         </ul>
                     </div>
 
                     <div className={`col-md-12 ${styles['tab-content']}`}>
-                        {tabs.map((tabTitle, tabIndex) => (
+                        {tabs.map((tab, tabIndex) => (
                             <div key={tabIndex} className={`${styles['tab-pane']} ${activeTab === tabIndex ? styles.active : ''}`}>
                                 <div className={styles['products-view-grid']}>
                                     <div
