@@ -13,7 +13,7 @@ const Section10 = () => {
                 { href: "/collections/cham-soc-tai-mat-mieng", title: "Chăm sóc tai - mắt - miệng" }
             ]}
             apiUrl={API_URLS.PRODUCTS}
-            categoryFilter="Làm đẹp cho cún - miu"
+            categoryFilter="lam-dep-cho-cun-miu"
         />
     )
 }

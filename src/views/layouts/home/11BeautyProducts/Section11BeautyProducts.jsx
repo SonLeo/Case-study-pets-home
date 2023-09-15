@@ -13,7 +13,7 @@ const Section11 = () => {
                 { href: "/collections/thuoc-tri-viem-da", title: "Thuốc trị viêm da" }
             ]}
             apiUrl={API_URLS.PRODUCTS}
-            categoryFilter="Thuốc, Vitamin và điều trị"
+            categoryFilter="thuoc-vitamin-va-dieu-tri"
         />
     )
 }

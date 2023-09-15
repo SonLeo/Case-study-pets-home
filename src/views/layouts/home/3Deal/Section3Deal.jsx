@@ -5,16 +5,26 @@ import ProductItem from '~/components/productItem/ProductItem';
 import styles from './Section3.module.css';
 import { API_URLS } from '~/utils/commonUtils';
 
-const Section3 = () => {
+const Section3Deal = () => {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [activeTab, setActiveTab] = useState(0);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentTabSlides, setCurrentTabSlides] = useState(0);
-
     const PRODUCTS_PER_SLIDE = 5;
 
     useEffect(() => {
+        // Fetch categories
+        axios.get(API_URLS.CATEGORIES)
+            .then(response => {
+                setCategories(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching categories:', error);
+            });
+
+        // Fetch products
         axios.get(API_URLS.PRODUCTS)
             .then(response => {
                 setProducts(response.data);
@@ -22,36 +32,27 @@ const Section3 = () => {
             .catch(error => {
                 console.error('Error fetching products:', error);
             });
+
     }, []);
 
     useEffect(() => {
-        changeTab(0);
-    }, [products]);
+        if (categories.length > 0) {
+            filterProductsByCategory(activeTab);
+        }
+    }, [products, categories, activeTab]);
 
-    const filterProductsByCategory = (categorySlug) => {
-        return products.filter(product =>
-            product.categories.some(category => category.slug === categorySlug)
-        );
+    const getCategoryIdBySlug = (slug) => {
+        const foundCategory = categories.find(category => category.slug === slug);
+        return foundCategory ? foundCategory.id : -1;
     };
 
-    const changeTab = (tabIndex) => {
-        setActiveTab(tabIndex);
+    const filterProductsByCategory = (tabIndex) => {
+        const categorySlug = tabs[tabIndex].slug;
+        const filtered = products.filter(product => product.categoryIds.includes(getCategoryIdBySlug(categorySlug)));
+        
+        setFilteredProducts(filtered);
+        setCurrentTabSlides(Math.ceil(filtered.length / PRODUCTS_PER_SLIDE));
         setCurrentSlide(0);
-        const currentTabProducts = filterProductsByCategory(tabs[tabIndex].slug);
-        setFilteredProducts(currentTabProducts);
-        setCurrentTabSlides(Math.ceil(currentTabProducts.length - PRODUCTS_PER_SLIDE + 1));
-    };
-
-    const nextSlide = () => {
-        if (currentSlide < currentTabSlides - 1) {
-            setCurrentSlide(prevSlide => prevSlide + 1);
-        }
-    };
-
-    const prevSlide = () => {
-        if (currentSlide > 0) {
-            setCurrentSlide(prevSlide => prevSlide - 1);
-        }
     };
 
     const tabs = [
@@ -78,7 +79,7 @@ const Section3 = () => {
                                 <li
                                     key={index}
                                     className={`${styles['tab-item']} ${activeTab === index ? styles.active : ''}`}
-                                    onClick={() => changeTab(index)}
+                                    onClick={() => setActiveTab(index)}
                                 >
                                     {tab.name}
                                 </li>
@@ -99,9 +100,7 @@ const Section3 = () => {
                                     >
                                         {filteredProducts.map((product, index) => (
                                             <div key={index} className={styles.product}>
-                                                <ProductItem
-                                                    product={product}
-                                                />
+                                                <ProductItem product={product} />
                                             </div>
                                         ))}
                                     </div>
@@ -109,13 +108,13 @@ const Section3 = () => {
                                 <div className={styles.nav}>
                                     <div
                                         className={currentSlide === 0 ? `${styles.prev} ${styles.disabled}` : styles.prev}
-                                        onClick={prevSlide}
+                                        onClick={() => currentSlide > 0 && setCurrentSlide(prev => prev - 1)}
                                     >
                                         <img src="/assets/icons/Arrow-line-left.png" alt="Previous slide" />
                                     </div>
                                     <div
                                         className={currentSlide >= currentTabSlides - 1 ? `${styles.next} ${styles.disabled}` : styles.next}
-                                        onClick={nextSlide}
+                                        onClick={() => currentSlide < currentTabSlides - 1 && setCurrentSlide(prev => prev + 1)}
                                     >
                                         <img src="/assets/icons/Arrow-line-right.png" alt="Next slide" />
                                     </div>
@@ -129,4 +128,4 @@ const Section3 = () => {
     );
 };
 
-export default Section3;
+export default Section3Deal;

@@ -30,5 +30,7 @@ export const API_URLS = {
     CARTS: "http://localhost:3001/api/carts",
     ORDERS: "http://localhost:3001/api/orders",
     PRODUCTS: "http://localhost:3001/api/products",
-    POSTS: "http://localhost:3001/api/posts"
+    POSTS: "http://localhost:3001/api/posts",
+    CATEGORIES: "http://localhost:3001/api/categories",
+    SUBCATEGORIES: "http://localhost:3001/api/subcategories"
 }

@@ -13,7 +13,7 @@ const Section5 = () => {
                 { href: "/collections/do-choi-cho-meo", title: "Đồ chơi" }
             ]}
             apiUrl={API_URLS.PRODUCTS}
-            categoryFilter="Thức ăn hạt cho mèo"
+            categoryFilter="thuc-an-hat-cho-meo"
         />
     )
 }

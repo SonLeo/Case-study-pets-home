@@ -3,22 +3,39 @@ import Link from "next/link";
 import React, { useState, useEffect } from 'react';
 import styles from "~/styles/ProductSection.module.css";
 import ProductItem from "~/components/productItem/ProductItem";
+import { API_URLS } from "~/utils/commonUtils";
 
 const ProductSection = ({ title, mainLink, subLinks, apiUrl, categoryFilter }) => {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        axios.get(API_URLS.CATEGORIES)
+            .then(response => {
+                setCategories(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching categories:', error);
+            });
+    }, []);
 
     useEffect(() => {
         axios.get(apiUrl)
             .then(response => {
+                const categoryId = getCategoryBySlug(categoryFilter).id;
                 const filteredProducts = categoryFilter ? 
-                    response.data.filter(product => product.categories.some(category => category.name === categoryFilter)) :
+                    response.data.filter(product => product.categoryIds.includes(categoryId)) :
                     response.data;
                 setProducts(filteredProducts.slice(0, 10));
             })
             .catch(error => {
                 console.error('Error fetching products:', error);
             });
-    }, [apiUrl, categoryFilter]);
+    }, [apiUrl, categoryFilter, categories]);
+
+    const getCategoryBySlug = (slug) => {
+        return categories.find(category => category.slug === slug) || {};
+    };
 
     return (
         <div className="section">

@@ -67,7 +67,7 @@ export default function Header() {
                     <div className="row">
                         <div className="col-md-3">
                             <div className="logo">
-                                <Link href="//">
+                                <Link href="/">
                                     <img src="/assets/images/brand/logo.png" alt="Company Logo" />
                                 </Link>
                             </div>
@@ -128,7 +128,7 @@ export default function Header() {
                                 <span className={styles.categoryDesc}> Danh mục sản phẩm</span>
                                 <ul className={`${styles.categoryList} ${styles.mainCategory}`}>
                                     <li className={`${styles.categoryItem} ${styles.mainCategoryItem}`}>
-                                        <Link href="/cun" title="Cún cưng">
+                                        <Link href="/cun-cung" title="Cún cưng">
                                             <img className={styles.icon} src="/assets/images/products/sub_menu_dog.png" alt="Cún cưng" />
                                             Cún cưng
                                             <img className={`${styles.icon} ${styles.arrow}`} src="/assets/icons/Arrow-right.png" alt="Cún cưng" />
@@ -162,7 +162,7 @@ export default function Header() {
                                         </ul>
                                     </li>
                                     <li className={`${styles.categoryItem} ${styles.mainCategoryItem}`}>
-                                        <Link href="/miu" title="Miu cưng">
+                                        <Link href="/miu-cung" title="Miu cưng">
                                             <img className={styles.icon} src="/assets/images/products/sub_menu_cat.png" alt="Miu cưng" />
                                             Miu cưng
                                             <img className={`${styles.icon} ${styles.arrow}`} src="/assets/icons/Arrow-right.png" alt="Miu cưng" />
@@ -333,7 +333,7 @@ export default function Header() {
                         <div className="col-md-9">
                             <ul className={styles.mainNavbar}>
                                 <li className={styles.navbarItem}>
-                                    <Link href="//">Trang chủ</Link>
+                                    <Link href="/">Trang chủ</Link>
                                 </li>
                                 <li className={`${styles.navbarItem} ${styles.category} ${styles.promotion} ${styles.hasSubnav}`}>
                                     Khuyến mãi
@@ -411,7 +411,7 @@ export default function Header() {
                                                     </Link>
                                                 </li>
                                                 <li className={`${styles.categoryItem} ${styles.mainCategoryItem} ${styles['user-logout']}`}>
-                                                    <Link href="//" onClick={handleLogout}>
+                                                    <Link href="/" onClick={handleLogout}>
                                                         <img className={`${styles['logout-icon']}`} src="/assets/icons/Logout-line.svg" alt="Log out" />
                                                         <span>Đăng xuất</span>
                                                     </Link>
