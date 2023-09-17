@@ -7,7 +7,7 @@ import styles from '../styles/category.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faAngleLeft, faAngleRight, faListUl, faTags, faArrowUpLong, faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
 
-function CategoryPage({ category, products, subcategories, currentPage, totalPages }) {
+function CategoryPage({ category, products, categories, subcategories, currentPage, totalPages }) {
     return (
         <>
             <Header />
@@ -21,27 +21,19 @@ function CategoryPage({ category, products, subcategories, currentPage, totalPag
                                         <FontAwesomeIcon className={styles["category-heading-icon"]} icon={faListUl} /> Danh mục
                                     </h3>
                                     <ul className={styles['category-list']}>
-                                        <li className={`${styles["category-item"]} ${styles["category-item--active"]}`}>
-                                            <a className={styles["category-item__link"]}>Cún cưng</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Miu cưng</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Nhà xinh</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Làm đẹp</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Tủ thuốc</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Thời trang</a>
-                                        </li>
-                                        <li className={styles["category-item"]}>
-                                            <a className={styles["category-item__link"]}>Combo sản phẩm</a>
-                                        </li>
+                                        {categories.filter(cat => cat.id <= 7).map(cat => (
+                                            <li
+                                                key={cat.id}
+                                                className={`
+                                                    ${styles["category-item"]} 
+                                                    ${category.slug === cat.slug ? styles["category-item--active"] : ""}
+                                                `}
+                                            >
+                                                <a href={`/${cat.slug}`} className={styles["category-item__link"]}>
+                                                    {cat.name}
+                                                </a>
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <div className={styles["subcategories"]}>
@@ -170,12 +162,14 @@ export async function getServerSideProps(context) {
     let category = null;
     let subcategoriesForCategory = [];
     let totalPages = 0;
+    let categories = [];
 
     try {
-        const [productsRes, categoriesRes, subcategoriesRes] = await Promise.all([
+        const [productsRes, categoriesRes, subcategoriesRes, allCategoriesRes] = await Promise.all([
             axios.get(API_URLS.PRODUCTS),
             axios.get(API_URLS.CATEGORIES),
-            axios.get(API_URLS.SUBCATEGORIES)
+            axios.get(API_URLS.SUBCATEGORIES),
+            axios.get(API_URLS.CATEGORIES)
         ]);
 
         const allProducts = productsRes.data;
@@ -195,6 +189,8 @@ export async function getServerSideProps(context) {
             currentPage * ITEMS_PER_PAGE
         );
 
+        categories = allCategoriesRes.data;
+
     } catch (error) {
         console.error("Error fetching data:", error);
         return { notFound: true };
@@ -206,9 +202,11 @@ export async function getServerSideProps(context) {
             products: filteredProducts,
             subcategories: subcategoriesForCategory,
             currentPage,
-            totalPages
+            totalPages,
+            categories
         }
     }
 }
+
 
 export default CategoryPage;
