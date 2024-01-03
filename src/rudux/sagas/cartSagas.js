@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeLatest, call } from 'redux-saga/effects';
+import { select, put, takeLatest, call } from 'redux-saga/effects';
 import { API_URLS } from '~/utils/commonUtils';
 import { 
     DELETE_FROM_CART, 
@@ -7,7 +7,8 @@ import {
     FETCH_CART_ERROR, 
     FETCH_CART_ITEMS,
     ADD_PREVIOUS_ORDER_TO_CART,
-    SET_CART_ITEMS
+    SET_CART_ITEMS,
+    ADD_TO_CART
 } from '../actions/cartActions';
 
 function* handleError(error, errorMessage) {
@@ -41,6 +42,47 @@ function* deleteFromCartSaga(action) {
         }
     } catch (error) {
         yield* handleError(error, 'Error updating cart items: ');
+    }
+}
+
+function* addToCartSaga(action) {
+    try {
+        const { userId, productToAdd } = action.payload;
+        const cartResponse = yield call(axios.get, `${API_URLS.CARTS}?userId=${userId}`);
+        const cart = cartResponse.data[0];
+        const updatedCartItems = cart ? [...cart.cartItems] : [];
+
+        const existingProductIndex = productToAdd && updatedCartItems.findIndex(
+            cartItem => cartItem.id === productToAdd.id
+        );
+        if (existingProductIndex >= 0) {
+            updatedCartItems[existingProductIndex].quantity += productToAdd.quantity;
+        } else {
+            updatedCartItems.push({
+                ...productToAdd,
+            });
+        }
+
+        let response;
+        if (!cart) {
+            response = yield call(axios.post, `${API_URLS.CARTS}`, {
+                userId,
+                cartItems: updatedCartItems
+            });
+        } else {
+            response = yield call(axios.put, `${API_URLS.CARTS}/${cart.id}`, {
+                userId,
+                cartItems: updatedCartItems
+            });
+        }
+
+        if (response.status >= 200 && response.status < 300) {
+            yield put({ type: FETCH_CART_SUCCESS, payload: updatedCartItems});
+        } else {
+            yield* handleError(new Error(`Mã trạng thái phản hồi: ${response.status}`), "Lỗi khi thêm sản phẩm vào giỏ hàng: ");
+        }
+    } catch (error) {
+        yield* handleError(error, "Lỗi khi thêm sản phẩm vào giỏ hàng: ");
     }
 }
 
@@ -102,6 +144,10 @@ export function* watchFetchCartItems() {
 
 export function* watchDeleteFromCart() {
     yield takeLatest(DELETE_FROM_CART, deleteFromCartSaga);
+}
+
+export function* watchAddToCart() {
+    yield takeLatest(ADD_TO_CART, addToCartSaga);
 }
 
 export function* watchAddPreviousOrderToCart() {

@@ -1,4 +1,4 @@
-const { SELECT_SUBCATEGORIES } = require("../actions/categoryActions");
+import { SELECT_SUBCATEGORIES } from "../actions/categoryActions";
 
 const initialState = {
     selectedSubcategories: []

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URLS } from "~/utils/commonUtils";
 import CartDropdown from "../cart/CartDropdown";
+import Search from "~/components/toast/search/Search";
 
 export default function Header() {
     const router = useRouter();
@@ -73,46 +74,38 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <div className="col-md-5">
-                            <div className={styles.search}>
-                                <form className={styles.form}>
-                                    <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." className={styles.formControl} autoComplete="off" />
-                                    <button className={styles.btn}>
-                                        <img className={styles.searchIcon} src="/assets/icons/Search-white.svg" alt="Search Icon" />
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div className="col-md-4">
-                            <div className={styles.sales}>
-                                <Link href="/tel:0866211334">
-                                    <div className={`${styles.hotline} ${styles.salesItem}`}>
-                                        <div className={styles.salesIcon}><img src="/assets/icons/Phone-white.svg" alt="Phone Icon" /></div>
-                                        <div className={styles.salesContent}>
-                                            <p className={styles.salesContentheading}>0866211334</p>
-                                            <p className={styles.salesContentdesc}>Tổng đài miễn phí</p>
+                        <div className="col-md-9">
+                            <div className={styles["main-right"]}>
+                                <Search />
+                                <div className={styles.sales}>
+                                    <Link href="tel:0866211334">
+                                        <div className={`${styles.hotline} ${styles.salesItem}`}>
+                                            <div className={styles.salesIcon}><img src="/assets/icons/Phone-white.svg" alt="Phone Icon" /></div>
+                                            <div className={styles.salesContent}>
+                                                <p className={styles.salesContentheading}>0866211334</p>
+                                                <p className={styles.salesContentdesc}>Tổng đài miễn phí</p>
+                                            </div>
                                         </div>
+                                    </Link>
+                                    <div
+                                        className={`${styles.cart} ${styles.salesItem}`}
+                                        onClick={handleCartClick}
+                                        onMouseEnter={handleCartMouseEnter}
+                                        onMouseLeave={handleCartMouseLeave}
+                                    >
+                                        <div className={styles.salesIcon}>
+                                            <img src="/assets/icons/ShoppingCart-white.svg" alt="Shopping Cart Icon" />
+                                        </div>
+                                        <div className={styles.salesContent}>
+                                            <p className={styles.salesContentheading}>
+                                                <span className="cart-quantity">({totalItems})</span> Sản phẩm
+                                            </p>
+                                            <p className={styles.salesContentdesc}>Giỏ hàng</p>
+                                        </div>
+                                        {isCartHovered &&
+                                            <CartDropdown cart={cart} />
+                                        }
                                     </div>
-                                </Link>
-                                <div
-                                    className={`${styles.cart} ${styles.salesItem}`}
-                                    onClick={handleCartClick}
-                                    onMouseEnter={handleCartMouseEnter}
-                                    onMouseLeave={handleCartMouseLeave}
-                                >
-                                    <div className={styles.salesIcon}>
-                                        <img src="/assets/icons/ShoppingCart-white.svg" alt="Shopping Cart Icon" />
-                                    </div>
-                                    <div className={styles.salesContent}>
-                                        <p className={styles.salesContentheading}>
-                                            <span className="cart-quantity">({totalItems})</span> Sản phẩm
-                                        </p>
-                                        <p className={styles.salesContentdesc}>Giỏ hàng</p>
-                                    </div>
-                                    {isCartHovered && 
-                                        <CartDropdown cart={cart} />
-                                    }
                                 </div>
                             </div>
                         </div>
@@ -135,27 +128,27 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryCun}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/thuc-an-hat-cho-cun" title="Thức ăn hạt">
+                                                <Link href="/cun-cung/thuc-an-hat" title="Thức ăn hạt">
                                                     Thức ăn hạt
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/an-vat-banh-thuong-cho-cun" title="Ăn vặt, bánh thưởng">
+                                                <Link href="/cun-cung/an-vat-banh-thuong" title="Ăn vặt, bánh thưởng">
                                                     Ăn vặt, bánh thưởng
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/do-choi-cho-cun" title="Đồ chơi">
+                                                <Link href="/cun-cung/do-choi" title="Đồ chơi">
                                                     Đồ chơi
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/dung-cu-ve-sinh-cho-cun" title="Dụng cụ vệ sinh">
+                                                <Link href="/cun-cung/dung-cu-ve-sinh" title="Dụng cụ vệ sinh">
                                                     Dụng cụ vệ sinh
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/pate-do-hop-sua-cho-cun" title="Pate, đồ hộp, sữa">
+                                                <Link href="/cun-cung/pate-do-hop-sua" title="Pate, đồ hộp, sữa">
                                                     Pate, đồ hộp, sữa
                                                 </Link>
                                             </li>
@@ -169,27 +162,27 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryMiu}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/thuc-an-hat-cho-miu" title="Thức ăn hạt">
+                                                <Link href="/miu-cung/thuc-an-hat" title="Thức ăn hạt">
                                                     Thức ăn hạt
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/an-vat-banh-thuong-cho-miu" title="Ăn vặt, bánh thưởng">
+                                                <Link href="/miu-cung/an-vat-banh-thuong" title="Ăn vặt, bánh thưởng">
                                                     Ăn vặt, bánh thưởng
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/do-choi-cho-miu" title="Đồ chơi">
+                                                <Link href="/miu-cung/do-choi" title="Đồ chơi">
                                                     Đồ chơi
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/dung-cu-ve-sinh-cho-miu" title="Dụng cụ vệ sinh">
+                                                <Link href="/miu-cung/dung-cu-ve-sinh" title="Dụng cụ vệ sinh">
                                                     Dụng cụ vệ sinh
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/pate-do-hop-sua-cho-miu" title="Pate, đồ hộp, sữa">
+                                                <Link href="/miu-cung/pate-do-hop-sua" title="Pate, đồ hộp, sữa">
                                                     Pate, đồ hộp, sữa
                                                 </Link>
                                             </li>
@@ -203,27 +196,27 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryHome}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/giuong-nem-tham" title="Giường, nệm, thảm">
+                                                <Link href="/nha-xinh/giuong-nem-tham" title="Giường, nệm, thảm">
                                                     Giường, nệm, thảm
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/long-chuong" title="Lồng chuồng">
+                                                <Link href="/nha-xinh/long-chuong" title="Lồng chuồng">
                                                     Lồng chuồng
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/bat-an" title="Bát ăn">
+                                                <Link href="/nha-xinh/bat-an" title="Bát ăn">
                                                     Bát ăn
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/binh-nuoc" title="Bình nước">
+                                                <Link href="/nha-xinh/binh-nuoc" title="Bình nước">
                                                     Bình nước
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/balo-tui-xach" title="Balo, túi xách">
+                                                <Link href="/nha-xinh/balo-tui-xach" title="Balo, túi xách">
                                                     Balo, túi xách
                                                 </Link>
                                             </li>
@@ -237,27 +230,27 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryBeauty}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/sua-tam-cho-cun" title="Sữa tắm cho cún">
+                                                <Link href="/lam-dep/sua-tam" title="Sữa tắm cho cún">
                                                     Sữa tắm cho cún
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/sua-tam-cho-miu" title="Sữa tắm cho miu">
+                                                <Link href="/lam-dep/sua-tam" title="Sữa tắm cho miu">
                                                     Sữa tắm cho miu
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/chai-xit-khu-mui" title="Chai xịt khử mùi">
+                                                <Link href="/lam-dep/chai-xit-khu-mui" title="Chai xịt khử mùi">
                                                     Chai xịt khử mùi
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/cham-soc-tai-mat-mieng" title="Chăm sóc tai, mắt, miệng">
+                                                <Link href="/lam-dep/cham-soc-tai-mat-mieng" title="Chăm sóc tai, mắt, miệng">
                                                     Chăm sóc tai, mắt, miệng
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/luoc-keo-kim-cat-mong" title="Lược, kéo, kìm cắt móng">
+                                                <Link href="/lam-dep/luoc-keo-kim-cat-mong" title="Lược, kéo, kìm cắt móng">
                                                     Lược, kéo, kìm cắt móng
                                                 </Link>
                                             </li>
@@ -271,27 +264,27 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryMedicine}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/hat-dieu-tri" title="Hạt điều trị">
+                                                <Link href="/tu-thuoc/hat-dieu-tri" title="Hạt điều trị">
                                                     Hạt điều trị
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/vitamin" title="Vitamin">
+                                                <Link href="/tu-thuoc/vitamin" title="Vitamin">
                                                     Vitamin
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/thuoc-tri-ki-sinh" title="Thuốc trị kí sinh">
+                                                <Link href="/tu-thuoc/thuoc-tri-ki-sinh" title="Thuốc trị kí sinh">
                                                     Thuốc trị kí sinh
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/thuoc-tri-viem-da" title="Thuốc trị viêm da">
+                                                <Link href="/tu-thuoc/thuoc-tri-viem-da" title="Thuốc trị viêm da">
                                                     Thuốc trị viêm da
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/ho-tro-khac" title="Hỗ trợ khác">
+                                                <Link href="/tu-thuoc/ho-tro-khac" title="Hỗ trợ khác">
                                                     Hỗ trợ khác
                                                 </Link>
                                             </li>
@@ -305,17 +298,17 @@ export default function Header() {
                                         </Link>
                                         <ul className={`${styles.categoryList} ${styles.subCategory} ${styles.subCategoryFashion}`}>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/ao-quan" title="Áo quần">
+                                                <Link href="/thoi-trang/ao-quan" title="Áo quần">
                                                     Áo quần
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/phu-kien" title="Phụ kiện">
+                                                <Link href="/thoi-trang/phu-kien" title="Phụ kiện">
                                                     Phụ kiện
                                                 </Link>
                                             </li>
                                             <li className={styles.categoryItem}>
-                                                <Link href="/vong-co-day-dat" title="Vòng cổ, dây dắt">
+                                                <Link href="/thoi-trang/vong-co-day-dat" title="Vòng cổ, dây dắt">
                                                     Vòng cổ, dây dắt
                                                 </Link>
                                             </li>

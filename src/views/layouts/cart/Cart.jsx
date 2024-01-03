@@ -186,7 +186,7 @@ const Cart = () => {
                                                 <button
                                                     className={`${styles.btn} ${styles['quantity-decrease']}`}
                                                     onClick={() => handleQuantityChange(item.id, -1)}
-                                                    disabled={item.quantity <= 0}
+                                                    disabled={item.quantity < 2}
                                                 >
                                                     <FontAwesomeIcon icon={faMinus} />
                                                 </button>

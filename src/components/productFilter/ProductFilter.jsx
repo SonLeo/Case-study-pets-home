@@ -4,9 +4,17 @@ import { faArrowDownLong, faArrowUpLong, faChevronDown, faAngleLeft, faAngleRigh
 import { useMemo } from "react"
 import Link from "next/link";
 
-export default function ProductFilter({ category, currentPage, totalPages, selectedSubcategories }) {
-    const prevPage = useMemo(() => Math.max(currentPage - 1, 1), [currentPage])
-    const nextPage = useMemo(() => Math.min(currentPage + 1, totalPages), [currentPage, totalPages])
+export default function ProductFilter({ category, currentPage, totalPages, subcategory, subcategoriesQueryString, brandsQueryString }) {
+    const prevPage = useMemo(() => Math.max(currentPage - 1, 1), [currentPage]);
+    const nextPage = useMemo(() => Math.min(currentPage + 1, totalPages), [currentPage, totalPages]);
+
+    const prevLink = subcategory
+        ? `/${category.slug}/${subcategory.slug}?page=${prevPage}${brandsQueryString}`
+        : `/${category.slug}?page=${prevPage}${subcategoriesQueryString}${brandsQueryString}`;
+
+    const nextLink = subcategory
+        ? `/${category.slug}/${subcategory.slug}?page=${nextPage}${brandsQueryString}`
+        : `/${category.slug}?page=${nextPage}${subcategoriesQueryString}${brandsQueryString}`;
 
     const prevButtonStyles = useMemo(() =>
         `${styles["filter__page-btn"]} ${currentPage === 1 ? styles["filter__page-btn-disable"] : ""}`,
@@ -17,10 +25,6 @@ export default function ProductFilter({ category, currentPage, totalPages, selec
         `${styles["filter__page-btn"]} ${currentPage === totalPages ? styles["filter__page-btn-disable"] : ""}`,
         [currentPage, totalPages]
     )
-
-    const subcategoriesQueryString = selectedSubcategories && selectedSubcategories.length > 0
-        ? `&subcategories=${selectedSubcategories.join(',')}`
-        : '';
 
     return (
         <div className={styles["filter"]}>
@@ -47,12 +51,12 @@ export default function ProductFilter({ category, currentPage, totalPages, selec
                 </span>
 
                 <div className={styles["filter__page-control"]}>
-                    <Link href={`/${category.slug}?page=${prevPage}${subcategoriesQueryString}`}>
+                    <Link href={prevLink}>
                         <span className={prevButtonStyles}>
                             <FontAwesomeIcon icon={faAngleLeft} />
                         </span>
                     </Link>
-                    <Link href={`/${category.slug}?page=${nextPage}${subcategoriesQueryString}`}>
+                    <Link href={nextLink}>
                         <span className={nextButtonStyles}>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </span>

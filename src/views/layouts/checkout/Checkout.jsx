@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useToast } from "~/components/toastContext";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import { clearBuyNow } from "~/rudux/actions/buyNowActions";
 
 const Checkout = () => {
     const [discount, setDiscount] = useState(0);
@@ -21,6 +22,11 @@ const Checkout = () => {
     const router = useRouter();
     const shippingCost = 30000;
     const selectedProducts = useSelector(state => state.cart.selectedItems);
+    const buyProduct = useSelector(state => state.buyNow.buyProduct);
+    const dispatch = useDispatch();
+    const productToCheckout = buyProduct.length !== 0 ? [buyProduct] : selectedProducts;
+
+    console.log(buyProduct)
 
     const [shippingInfo, setShippingInfo] = useState({
         receiver: user ? user.username : "",
@@ -30,8 +36,8 @@ const Checkout = () => {
     });
 
     useEffect(() => {
-        if (selectedProducts.length === 0) {
-            showSuccessToast("Bạn chưa chọn sản phẩm để thanh toán!");
+        if (productToCheckout.length === 0) {
+            showErrorToast("Bạn chưa chọn sản phẩm để thanh toán!");
             router.push('/cart');
         }
     }, []);
@@ -87,12 +93,12 @@ const Checkout = () => {
                     status: "paid",
                     transactionId: null
                 },
-                orderItems: selectedProducts.map(item => ({
-                    productId: item.productId,
+                orderItems: productToCheckout.map(item => ({
+                    productId: item.id,
                     quantity: item.quantity,
                     productName: item.productName,
                     price: item.price_new,
-                    link: "",
+                    link: item.link,
                     image: item.image
                 }))
             };
@@ -101,6 +107,7 @@ const Checkout = () => {
 
             if (response.status === 200 || response.status === 201) {
                 showSuccessToast("Đặt hàng thành công!");
+                dispatch(clearBuyNow());
                 if (cartId) {
                     const cartResponse = await axios.get(`${API_URLS.CARTS}/${cartId}`);
                     const currentCartItems = cartResponse.data.cartItems;
@@ -114,6 +121,7 @@ const Checkout = () => {
                     });
                 }
                 router.push(`/order`);
+                
             } else {
                 showErrorToast("Đặt hàng thất bại!");
             }
@@ -123,7 +131,7 @@ const Checkout = () => {
     }
 
     const calculateTotalProductPrice = () => {
-        return selectedProducts.reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
+        return productToCheckout.reduce((acc, item) => acc + (item.price_new * item.quantity), 0);
     }
 
     const onVoucherApplied = (voucher) => {
@@ -154,7 +162,7 @@ const Checkout = () => {
                     <div className="col-lg-6 col-xl-6">
                         <h3 className={styles['checkout-sub-heading']}>Sản phẩm</h3>
                         <ul className={styles['product-list']}>
-                            {selectedProducts.map(item => (
+                            {productToCheckout.map(item => (
                                 <li className={styles['product-item']} key={item.id}>
                                     <div className={styles['product-image']}><img src={item.image} /></div>
                                     <div className={styles['product-details']}>

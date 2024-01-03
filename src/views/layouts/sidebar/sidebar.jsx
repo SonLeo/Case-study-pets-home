@@ -1,10 +1,11 @@
-import styles from '../../../styles/category.module.css';
+import styles from './Sidebar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListUl, faTags } from '@fortawesome/free-solid-svg-icons';
+import { faListUl, faTag, faTags } from '@fortawesome/free-solid-svg-icons';
 
-function Sidebar({ categories, subcategories, category, onCheckboxChange, selectedSubcategories }) {
+function Sidebar({ categories, subcategories, category, onCheckboxChange, selectedSubcategories, brands, onBrandChange }) {
     return (
         <nav className={styles['sidebar']}>
+
             <div className={styles["categories"]}>
                 <h3 className={styles['categories-heading']}>
                     <FontAwesomeIcon className={styles["category-heading-icon"]} icon={faListUl} /> Danh mục
@@ -26,10 +27,10 @@ function Sidebar({ categories, subcategories, category, onCheckboxChange, select
                 </ul>
             </div>
             <div className={styles["subcategories"]}>
-                <h3 className={styles['subcategories-heading']}>
+                <h3 className={styles["subcategories-heading"]}>
                     <FontAwesomeIcon className={styles["category-heading-icon"]} icon={faTags} /> Loại sản phẩm
                 </h3>
-                <ul className={styles['category-list']}>
+                <ul className={styles["category-list"]}>
                     {subcategories && subcategories.map(subcategory => (
                         <li className={styles["category-item"]} key={subcategory.id}>
                             <p className={styles["category-item__link"]}>
@@ -41,6 +42,26 @@ function Sidebar({ categories, subcategories, category, onCheckboxChange, select
                                     checked={selectedSubcategories.includes(subcategory.id.toString())}
                                 />
                                 <label htmlFor={subcategory.slug}>{subcategory.name}</label>
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className={styles["brands"]}>
+                <h3 className={styles["brands-heading"]}>
+                    <FontAwesomeIcon className={styles["category-heading-icon"]} icon={faTag} /> Thương hiệu
+                </h3>
+                <ul className={styles["category-list"]}>
+                    {brands && brands.map(brand => (
+                        <li className={styles["category-item"]} key={brand.id}>
+                            <p className={styles["category-item__link"]}>
+                                <input
+                                    type='checkbox'
+                                    id={brand.id}
+                                    value={brand.id}
+                                    onChange={onBrandChange}
+                                />
+                                <label htmlFor={brand.id}>{brand.name}</label>
                             </p>
                         </li>
                     ))}
